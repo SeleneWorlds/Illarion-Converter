@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "illarion:item_86": {
+      "door": {
+        "status": "open",
+        "closed": "illarion:item_497"
+      }
+    },
+    "illarion:item_497": {
+      "door": {
+        "status": "closed",
+        "open": "illarion:item_86"
+      }
+    },
+    "illarion:item_87": {
+      "door": {
+        "status": "open",
+        "closed": "illarion:item_922"
+      }
+    },
+    "illarion:item_922": {
+      "door": {
+        "status": "closed",
+        "open": "illarion:item_87"
+      }
+    },
+    "illarion:item/apple": {
+      "food": {
+        "value": 2000,
+        "dietValue": -20,
+        "dietValueByRace": {
+          "fairy": 20
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "dependencies": ["moonlight-inventory"],
+  "entrypoints": [
+    "server/lua/entrypoints/login.lua",
+    "server/lua/entrypoints/logout.lua",
+    "server/lua/entrypoints/use.lua",
+    "server/lua/entrypoints/chat.lua"
+  ],
+  "preloads": {
+    "item.doors": "server/lua/tile/door.lua",
+    "item.food": "server/lua/item/food.lua"
+  }
+}
