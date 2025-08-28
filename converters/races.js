@@ -91,13 +91,13 @@ export default function convert({ intermediate, output, config }) {
         };
       }
     }
-    raceVisuals[type !== undefined ? `illarion:race_${race}_${type}` : `illarion:race_${race}`] = {
+    raceVisuals[`illarion:race_${race}_${type ?? 0}`] = {
       type: "animator",
       animator: "humanoid",
       sortLayerOffset: 301,
       metadata: {
         raceId: Number(race),
-        typeId: Number(type || 0),
+        typeId: Number(type ?? 0),
       },
       animations,
     };
@@ -278,12 +278,12 @@ export default function convert({ intermediate, output, config }) {
   for (const [id, row] of Object.entries(races)) {
     const raceTypes = row.types ? Object.keys(row.types) : [0];
     for (const type of raceTypes) {
-      entityEntries[raceTypes.length > 1 ? `illarion:race_${id}_${type}` : `illarion:race_${id}`] = {
+      entityEntries[`illarion:race_${id}_${type}`] = {
         tags: ["illarion:character"],
         components: {
           "illarion:visual": {
             type: "visual",
-            visual: raceTypes.length > 1 ? `illarion:race_${id}_${type}` : `illarion:race_${id}`,
+            visual: `illarion:race_${id}_${type}`,
           },
         },
         metadata: { raceId: Number(id), typeId: Number(type) },
