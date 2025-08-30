@@ -1,0 +1,1704 @@
+local condition_language = require("npc.base.condition.language")
+local basic = require("npc.base.basic")
+local talk = require("npc.base.talk")
+local consequence_inform = require("npc.base.consequence.inform")
+local function initNpc()
+local mainNPC = basic()
+mainNPC:setAffiliation(0)
+local talkingNPC = talk(mainNPC)
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Help")
+talkEntry:addConsequence(consequence_inform("[Game Help] This NPC is Viola Baywillow. She will gladly help you learn more about Illarion. Keywords: Hello, Illarion, Realms, Cadomyr, Galmair, Runewick, Empire, Gods, Crafts, Motives, Landscapes, Leaders, Politics, Laws, Founding, Gems."))
+talkEntry:addResponse("Hiho, Viola Baywillow, here to help! I know lots about the three realms of Illarion and beyond if you want to ask me anything?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Hilfe")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Dieser NPC heißt Viola Baywillow. Sie wird dir gerne dabei helfen mehr über Illarion zu erfahren. Schlüsselwörter: Hallo, Illarion, Reiche, Cadomyr, Galmair, Runewick, Imperi, Götter, Handwerk, Motivation, Landschaft, Anführer, Politik, Gesetze, Gründung, Edelsteine."))
+talkEntry:addResponse("Hiho, ich bin Viola Baywillow und hier um dir zu helfen! Ich weiß eine ganze Menge über die drei Reiche Illarions und einige andere Dinge. Was möchtest du wissen?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Hello")
+talkEntry:addTrigger("Greet")
+talkEntry:addTrigger("Hail")
+talkEntry:addTrigger("Good day")
+talkEntry:addTrigger("Good morning")
+talkEntry:addTrigger("Good evening")
+talkEntry:addTrigger("Good night")
+talkEntry:addResponse("Hiho! If you would like to know something about the realms of Cadomyr, Galmair or Runewick, just ask me!")
+talkEntry:addResponse("Hiho! Let me tell you about the realms of Cadomyr, Galmair and Runewick!")
+talkEntry:addResponse("Hiho! Just ask if you would like to know something about the realms of Cadomyr, Galmair and Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Grüß")
+talkEntry:addTrigger("Gruß")
+talkEntry:addTrigger("Grüss")
+talkEntry:addTrigger("Gruss")
+talkEntry:addTrigger("Guten Morgen")
+talkEntry:addTrigger("Guten Tag")
+talkEntry:addTrigger("Guten Abend")
+talkEntry:addTrigger("Gute Nacht")
+talkEntry:addTrigger("Mahlzeit")
+talkEntry:addTrigger("Tach")
+talkEntry:addResponse("Hiho! Wenn du etwas über die Reiche Cadomyr, Galmair und Runewick wissen möchtest, frag mich einfach.")
+talkEntry:addResponse("Hiho! Lass mich dir etwas über die Reiche Cadomyr, Galmair und Runewick erzählen!")
+talkEntry:addResponse("Hiho! Frag einfach, falls du etwas über die Reiche Cadomyr, Galmair und Runewick erfahren möchtest.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Hiho")
+talkEntry:addTrigger("Hallo")
+talkEntry:addTrigger("Hey")
+talkEntry:addTrigger("Greeb")
+talkEntry:addResponse("Hiho! If you would like to know something about the realms of Cadomyr, Galmair or Runewick, just ask me!")
+talkEntry:addResponse("Hiho! Let me tell you about the realms of Cadomyr, Galmair and Runewick!")
+talkEntry:addResponse("Hiho! Just ask if you would like to know something about the realms of Cadomyr, Galmair and Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Hiho")
+talkEntry:addTrigger("Hallo")
+talkEntry:addTrigger("Hey")
+talkEntry:addTrigger("Greeb")
+talkEntry:addResponse("Hiho! Wenn du etwas über die Reiche Cadomyr, Galmair und Runewick wissen möchtest, frag mich einfach.")
+talkEntry:addResponse("Hiho! Lass mich dir etwas über die Reiche Cadomyr, Galmair und Runewick erzählen!")
+talkEntry:addResponse("Hiho! Frag einfach, falls du etwas über die Reiche Cadomyr, Galmair und Runewick erfahren möchtest.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Farewell")
+talkEntry:addTrigger("Bye")
+talkEntry:addTrigger("Fare well")
+talkEntry:addTrigger("See you")
+talkEntry:addResponse("Farewell!")
+talkEntry:addResponse("Safe travels!")
+talkEntry:addResponse("Goodbye and good luck!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Tschüß")
+talkEntry:addTrigger("Tschüss")
+talkEntry:addTrigger("Wiedersehen")
+talkEntry:addTrigger("Gehab wohl")
+talkEntry:addTrigger("Bis bald")
+talkEntry:addResponse("Mach's gut.")
+talkEntry:addResponse("Tschüß.")
+talkEntry:addResponse("Viel Glück und auf Wiedersehen.")
+talkEntry:addResponse("Bis bald!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Ciao")
+talkEntry:addTrigger("Adieu")
+talkEntry:addTrigger("Au revoir")
+talkEntry:addTrigger("Farebba")
+talkEntry:addResponse("Farewell!")
+talkEntry:addResponse("Safe travels!")
+talkEntry:addResponse("Goodbye and good luck!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Ciao")
+talkEntry:addTrigger("Adieu")
+talkEntry:addTrigger("Au revoir")
+talkEntry:addTrigger("Farebba")
+talkEntry:addResponse("Bis später.")
+talkEntry:addResponse("Tschüß.")
+talkEntry:addResponse("Viel Glück und auf Wiedersehen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("How are you")
+talkEntry:addTrigger("How do you feel")
+talkEntry:addTrigger("How do you do")
+talkEntry:addResponse("I'm fine, and you?")
+talkEntry:addResponse("I feel great, thanks for asking.")
+talkEntry:addResponse("Can't complain!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Wie geht")
+talkEntry:addTrigger("Wie fühlst")
+talkEntry:addTrigger("Wie ist es ergangen")
+talkEntry:addTrigger("Wie Befinden")
+talkEntry:addResponse("Es geht mir gut. Und selbst?")
+talkEntry:addResponse("Ich fühle mich großartig, danke der Nachfrage.")
+talkEntry:addResponse("Ich kann mich nicht beschweren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("your name")
+talkEntry:addTrigger("who are you")
+talkEntry:addTrigger("who art thou")
+talkEntry:addResponse("I'm Viola Baywillow and I know all the important things about the realms of Cadomyr, Galmair and Runewick. Feel free to ask me something!")
+talkEntry:addResponse("I'm Viola Baywillow and I can provide lots of information about the realms of Cadomyr, Galmair and Runewick, to help you decide on a new home.")
+talkEntry:addResponse("I'm Viola Baywillow and I have lots of information about the realms of Cadomyr, Galmair and Runewick, to help you decide which ferry to catch.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("ihr name")
+talkEntry:addTrigger("dein name")
+talkEntry:addTrigger("wer bist du")
+talkEntry:addTrigger("wer seid ihr")
+talkEntry:addTrigger("wie heißt")
+talkEntry:addTrigger("wie heisst")
+talkEntry:addResponse("Ich bin Viola Baywillow und ich weiß viele wichtige Dinge über die Reiche Cadomyr, Galmair und Runewick. Du kannst mich gerne etwas fragen.")
+talkEntry:addResponse("Mein Name ist Viola Baywillow und ich kann eine Menge Informationen zu den Reichen Cadomyr, Galmair und Runewick liefern, um dir bei der Wahl deines neuen Zuhauses zu helfen.")
+talkEntry:addResponse("Ich heiße Viola Baywillow. Ich weiß eine Menge über Cadomyr, Galmair und Runewick und kann dir dabei helfen die passende Fähre auszuwählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("my name")
+talkEntry:addTrigger("I am called")
+talkEntry:addTrigger("I'm called")
+talkEntry:addResponse("Pleased to meet you, I will try to remember it!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("mein Name")
+talkEntry:addTrigger("ich heiße")
+talkEntry:addResponse("Freut mich, dich kennen zu lernen. Ich werde versuchen es mir zu merken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("quest")
+talkEntry:addTrigger("mission")
+talkEntry:addResponse("Frizza in Cadomyr, Iradona Goldschein in Galmair, and Elesil Daelwon in Runewick, all have good advice for those seeking work or adventures in the three realms. Carry on asking around as you explore Illarion and you are sure to find many opportunities.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("quest")
+talkEntry:addTrigger("mission")
+talkEntry:addResponse("Frizza in Cadomyr, Iradona Goldschein in Galmair und Elesil Daelwon in Runewick können allen, die Arbeit oder Abenteuer in den drei Reichen suchen, weiterhelfen. Frag weiter herum, während du Illarion erkundest und du wirst mit Sicherheit viele Gelegenheiten finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("task")
+talkEntry:addTrigger("adventure")
+talkEntry:addTrigger("order")
+talkEntry:addResponse("Frizza in Cadomyr, Iradona Goldschein in Galmair, and Elesil Daelwon in Runewick, all have good advice for those seeking work or adventures in the three realms. Carry on asking around as you explore Illarion and you are sure to find many opportunities.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Auftrag")
+talkEntry:addTrigger("Aufgabe")
+talkEntry:addTrigger("Abenteuer")
+talkEntry:addTrigger("Befehl")
+talkEntry:addResponse("Frizza in Cadomyr, Iradona Goldschein in Galmair und Elesil Daelwon in Runewick können allen, die Arbeit oder Abenteuer in den drei Reichen suchen, weiterhelfen. Frag weiter herum, während du Illarion erkundest und du wirst mit Sicherheit viele Gelegenheiten finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("sell")
+talkEntry:addTrigger("buy")
+talkEntry:addTrigger("wares")
+talkEntry:addTrigger("price")
+talkEntry:addTrigger("trade")
+talkEntry:addTrigger("purchase")
+talkEntry:addResponse("I am not a trader. All I have is information about the realms, and I'll gladly provide that for free!")
+talkEntry:addResponse("I'm sorry, but I don't trade anything. You are welcome to ask me about the realms instead.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("kauf")
+talkEntry:addTrigger("waren")
+talkEntry:addTrigger("koste")
+talkEntry:addTrigger("Handel")
+talkEntry:addTrigger("veräußer")
+talkEntry:addTrigger("veräusser")
+talkEntry:addTrigger("erwerb")
+talkEntry:addResponse("Ich bin keine Händlerin. Alles was ich habe sind Informationen über die Reiche und die biete ich gerne kostenlos an.")
+talkEntry:addResponse("Es tut mir leid, aber ich handel nicht. Stattdessen kannst du mich aber gerne über die Reiche befragen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("profession")
+talkEntry:addResponse("I tell people about Illarion and help guide newcomers to the harbour so that they can catch a ferry to one of the three realms.")
+talkEntry:addResponse("I provide information about the three realms of Illarion and if you are new to these lands I can help you catch a ferry to your new home.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("beruf")
+talkEntry:addTrigger("arbeit")
+talkEntry:addResponse("Ich erzähle Leuten von Illarion und weise Neuankömmlingen den Weg zum Hafen, damit sie eine Fähre zu einem der drei Reiche nehmen können.")
+talkEntry:addResponse("Ich biete Informationen zu den drei Reichen Illarions an und kann dir helfen die Fähre zu deinem neuen Zuhause zu finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("job")
+talkEntry:addResponse("I tell people about Illarion and help guide newcomers to the harbour so that they can catch a ferry to one of the three realms.")
+talkEntry:addResponse("I provide information about the three realms of Illarion and if you are new to these lands I can help you catch a ferry to your new home.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("job")
+talkEntry:addResponse("Ich erzähle Leuten von Illarion und weise Neuankömmlingen den Weg zum Hafen, damit sie eine Fähre zu einem der drei Reiche nehmen können.")
+talkEntry:addResponse("Ich biete Informationen zu den drei Reichen Illarions an und kann dir helfen die Fähre zu deinem neuen Zuhause zu finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("harbour")
+talkEntry:addTrigger("harbor")
+talkEntry:addTrigger("dock")
+talkEntry:addResponse("Ferries depart for the three realms of Cadomyr, Galmair and Runewick, from the harbour here at Troll's Haven all the time. Take the path west to the main pier where you can board one. Be careful you don't get on the wrong boat though as some go to dangerous places!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("hafen")
+talkEntry:addTrigger("anlege")
+talkEntry:addTrigger("steg")
+talkEntry:addResponse("Fähren zu den drei Reichen Cadomyr, Galmair und Runewick legen ständig hier in Trollshaven ab. Folge dem Weg nach Westen zum Pier, um an Bord zu gehen. Aber sei vorsichtig, dass du nicht auf das falsche Schiff steigst! Manche setzen zu gefährlichen Orten über.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("port")
+talkEntry:addTrigger("pier")
+talkEntry:addResponse("Ferries depart for the three realms of Cadomyr, Galmair and Runewick, from the harbour here at Troll's Haven all the time. Take the path west to the main pier where you can board one. Be careful you don't get on the wrong boat though as some go to dangerous places!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("port")
+talkEntry:addTrigger("pier")
+talkEntry:addResponse("Fähren zu den drei Reichen Cadomyr, Galmair und Runewick legen ständig vom Hafen hier in Trollshaven ab. Folge dem Weg nach Westen zum Pier, um an Bord zu gehen. Aber sei vorsichtig, dass du nicht auf das falsche Schiff steigst! Manche setzen zu gefährlichen Orten über!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("ferry")
+talkEntry:addTrigger("boat")
+talkEntry:addTrigger("ship")
+talkEntry:addResponse("Boats sail all around the peninsula and you can catch one to any of the three realms of Cadomyr, Galmair and Runewick from the harbour here at Troll's Haven. Take the path west to the main pier if you want to set sail.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("fähre")
+talkEntry:addTrigger("boot")
+talkEntry:addTrigger("schiff")
+talkEntry:addResponse("Schiffe segeln um die gesamte Halbinsel herum. Von Trollshaven aus kannst du eins zu jedem der drei Reiche nehmen. Folge dem Pfad gen Westen zum Pier, wenn du Segel setzen möchtest.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Illarion")
+talkEntry:addResponse("Cut off from the mainland by the towering Nameless Mountains, Illarion is home to the realms of Cadomyr, Galmair and Runewick. They once stood together to overcome the mighty sorcerer Kharud after he wrought destruction across the Old Empires.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Illarion")
+talkEntry:addResponse("Illarion ist durch die riesigen Namenlosen Berge vom Festland getrennt. Es ist unterteilt in die Reiche Cadomyr, Galmair und Runewick. Einst taten sie sich zusammen, um den mächtigen Hexer Kharud, nachdem dieser Zerstörung über die Alten Reiche brachte.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Troll's Haven")
+talkEntry:addTrigger("Trolls Haven")
+talkEntry:addTrigger("Trollshaven")
+talkEntry:addResponse("People come to Troll's Haven from all over Illarion and beyond to visit, but it isn't somewhere most would call home. The three realms of Cadomyr, Galmair and Runewick can offer much more by way of protection and opportunity.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Troll's Haven")
+talkEntry:addTrigger("Trolls Haven")
+talkEntry:addTrigger("Trollshaven")
+talkEntry:addResponse("Leute aus allen Teilen Illarions und von außerhalb kommen als Besucher nach Trollshaven, aber nur die wenigsten würden es ein Zuhause nennen. Die drei Reiche Cadomyr, Galmair und Runewick bieten wesentlich mehr Schutz und Möglichkeiten.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("faction")
+talkEntry:addTrigger("realm")
+talkEntry:addTrigger("town")
+talkEntry:addTrigger("city")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Cadomyr', 'Galmair' or 'Runewick' if you want to know more."))
+talkEntry:addResponse("The three realms of Cadomyr, Galmair and Runewick, dominate the once forgotten land of Illarion. Ruled by three powerful leaders, they were founded during the rise of the sorcerer Kharud and were instrumental in his demise. Nowadays with the six gems of power secure, the realms flourish with each becoming renowned for their specialist crafting expertise.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Fraktion")
+talkEntry:addTrigger("Reich")
+talkEntry:addTrigger("Städte")
+talkEntry:addTrigger("Stadt")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Cadomyr', 'Galmair' oder 'Runewick', um mehr zu erfahren."))
+talkEntry:addResponse("Die drei Reiche Cadomyr, Galmair und Runewick dominieren das einst vergessene Land Illarion. Regiert von drei mächtigen Herrschern, wurden die Städte während des Aufstiegs des Hexers Kharuds errichtet und im Verlauf der Auseinandersetzung entwickelten sie sich zu wichtigen Werkzeugen für seinen Untergang. Heutzutage, da die sechs Edelsteine der Macht gesichert sind, gedeihen die Reiche, und jedes ist für seine spezielle Handwerkskompetenz bekannt.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Cadomyr")
+talkEntry:addResponse("Flanked by the impenetrable Nameless Mountains and the Great Ocean, the formidable fortress walls of Cadomyr dominate the Kantabi Desert in the southwest of Illarion. With a rich heritage of combat, honour and glory are central to Cadomyrian values. Hierarchal noble houses form the ruling elite with Queen Rosaline Edwards expecting unquestionable loyalty from her subjects.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Cadomyr")
+talkEntry:addResponse("Umgeben von den unbezwingbaren Namenlosen Bergen und dem Großen Ozean, trotzen die glorreichen Mauern der Festung Cadomyr der Kantabiwüste im Südwesten Illarions. Mit einer reichen Tradition in der Kriegsführung, sind Ehre und Ruhm wichtige Werte Cadomyrs. Hierarchische Adelshäuser bilden die Regierungselite. Königin Rosaline Edwards erwartet unbedingte Loyalität von ihren Untertanen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Galmair")
+talkEntry:addResponse("With halls and caverns nestled in the foothills of the Nameless Mountains, the imposing walls and rocky outcrops of Galmair overlook the northwest of Illarion. Galmair thrives on trade, with prosperity and wealth held in high esteem. Free from the constraints of formal law and codes of honour, Don Valerio Guilianni welcomes any who can pay their taxes and with enough wealth you can become anything.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Galmair")
+talkEntry:addResponse("Mit Hallen und Höhlen am Fuße der Namenlosen Berge überblicken die imposanten Mauern und Felsvorsprünge Galmairs den Nordwesten Illarions. Galmair gedeiht vom Handel und legt daher großen Wert auf Reichtum und Wohlstand. Ohne die beschränkenden Fesseln eines Ehrenkodex, heißt Don Valerio Guilianni all jene willkommen, die ihre Steuern zahlen. Mit genügend Münzen kannst du hier alles erreichen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Runewick")
+talkEntry:addResponse("Set in an archipelago of forested islands in the southeast of Illarion, Runewick is surrounded by fertile fields and bountiful glades. Founded as an academy of magic, wisdom and knowledge is believed to be the source of all power. Runewick is considered enlightened by many but few of his flock would dare challenge the advice of Archmage Elvaine Morgan.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Runewick")
+talkEntry:addResponse("Verteilt über eine bewaldete Inselgruppe im Südosten Illarions liegt Runewick mit seinen fruchtbaren Feldern und seinen wunderschönen Wiesen. Gegründet als magische Akademie, bilden Weisheit und Wissen die Quelle aller Macht in der Stadt. Runewick wird von vielen als aufgeklärt angesehen, doch nur wenige seiner Bürger wagen es, den weisen Ratschlag von Erzmagier Elvaine Morgan auszuschlagen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Gobaith")
+talkEntry:addTrigger("Gobiath")
+talkEntry:addResponse("I heard this was once a distant island in the Great Ocean, but it was destroyed when the Elder Gods returned angered by the self-destructiveness of the mortal races. The rulers of the realms heard of Gobaith's plight and with promises of glory, wisdom, and prosperity sent a fleet of vessels to save refugees from the sinking island. Many found a new life here in Illarion, perhaps one of those rescued can tell you more?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Gobaith")
+talkEntry:addTrigger("Gobiath")
+talkEntry:addResponse("Ich habe gehört, dass es einst eine weit entfernte Insel im Großen Ozean war, aber es wurde zerstört, als die Alten Götter zurückkehrten aus Zorn über das selbstzerstörerische Verhalten der Sterblichen. Die Herrscher der Reiche hörten von Gobaiths Not und entsandten eine Flotte von Schiffen, um Flüchtlinge von der sinkenden Insel zu retten. Sie versprachen Ruhm, Weisheit und Wohlstand. Viele fanden hier in Illarion ein neues Leben. Vielleicht kannst du jemanden der Geretteten darum bitten, dir mehr zu erzählen?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("empire")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Albar', 'Gynk', 'Salkamar' or 'Lor-Angur' if you want to know more."))
+talkEntry:addResponse("For years the mighty empires of Albar, Gynk, Salkamar and Lor-Angur vied for dominance with frequent wars. The rise of the sorcerer Kharud, however, crushed the Old Empires and they never recovered their former prestige. Luckily Illarion brought new hope!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Imperi")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Albar', 'Gynk', 'Salkamar' oder 'Lor-Angur', wenn du mehr erfahren möchtest."))
+talkEntry:addResponse("Jahrelang rangen die mächtigen Imperien Albar, Gynk, Salkamar und Lor-Angur in andauernden Kriegen um die Vorherrschaft. Der Aufstieg des Hexers Kharud zerschmetterte die alten Reiche und sie konnten nie wieder ihren alten Glanz erreichen. Zum Glück brachte Illarion neue Hoffnung!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("albar")
+talkEntry:addResponse("Albar is an old city of the Straight Folk, rich in heritage and ruled by a long line of illustrious kings. After years of war though, the imposing monuments that once honoured glorious victories mostly lie in ruins. Albarian life conforms to strict hierarchical social order and comparisons can be drawn with Cadomyr, yet only men rise to nobility in Albar. The Queen's father was Albarian but named his only child, a daughter, as his successor.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("albar")
+talkEntry:addResponse("Albar ist eine alte Stadt des Volkes der Ordnung, reich an Tradition und regiert von einer langen Reihe berühmter Könige. Nach Jahren des Krieges liegen die imposanten Monumente, die einst glorreiche Siege ehrten, größtenteils in Trümmern. Das albarische Leben folgt einer strikten hierarchischen Gesellschaftsordnung, ganz ähnlich wie in Cadomyr. Allerdings können in Albar nur Männer in den Adelsstand erhoben werden. Der Vater der Königin war Albarer, aber er benannte seine Tochter, sein einziges Kind, zur Throhnfolgerin.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("gynk")
+talkEntry:addTrigger("gync")
+talkEntry:addResponse("Gynk rose as an independent city of Free Folk, founded by refugees after years of suffering war between the Old Empires. Rough and chaotic, with many battling just to survive, almost any trade can be found for the right price. Opportunity lies everywhere for those prepared to take it and almost anything can be possible in Gynk. The Don and his father both arrived from Gynk, so it is hardly surprising to find similarities with Galmair.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("gynk")
+talkEntry:addTrigger("gync")
+talkEntry:addResponse("Gynk wuchs als unabhängige Stadt des Freien Volkes. Es wurde von Flüchtlingen aus den jahrelangen Kriegen zwischen den alten Imperien gegründet. Die Stadt ist rau und chaotisch, viele kämpfen ums Überleben. Dort kann mit fast allem gehandelt werden, wenn der Preis stimmt. Fast alles ist möglich in Gynk und jene, die bereit sind jede sich bietende Gelgenheit zu nutzen, können hier beinahe alles erreichen. Der Don und sein Vater stammen beide aus Gynk, daher ist es wenig überraschend, dass sich Ähnlichkeiten zu Galmair finden lassen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("salkama")
+talkEntry:addResponse("Salkamar is an old city of the Light Folk, a place of enlightened loyalty and respect that once thrived under the wise rule of male or female representatives of the population. Every child was taught to read and write but so many of the libraries were lost to war. Many Salkamaerian influences are seen in the social structure of Runewick, derived no doubt from the close ties between the empire and Lor-Angur where the Archmage hailed from.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("salkama")
+talkEntry:addResponse("Salkamar ist eine alte Stadt des Lichtvolkes, ein Ort von erhabener Loyalität und Respekt, der einst unter der weisen Herrschaft männlicher oder weiblicher Vertreter der Bevölkerung gedieh. Jedes Kind lernte zu lesen und zu schreiben, doch etliche Bibliotheken wurden im Krieg zerstört. Die sozialen Strukturen in Runewick sind stark von denen Salkamars beeinflusst. Dies begründet sich vermutlich in den starken Banden zwischen Salkamar und Lor-Angur, von wo der Erzmagier stammt.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("angur")
+talkEntry:addResponse("Lor-Angur was founded as a centre of magic by scholars fleeing persecution in Albar. Six outer citadels surround the inner citadel of the High Lord Protector who heads the governing council of mages. Thanks to a magical crystal shield the citadels have remained intact despite years of war that ravaged the land. Archmage Elvaine Morgan arrived from Lor-Angur, so it is hardly surprising to find similarities with Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("angur")
+talkEntry:addResponse("Lor-Angur wurde als Zentrum der Magie von Gelehrten gegründet, die vor der Verfolgung in Albar flohen. Sechs äußere Zitadellen umgeben die Festung des Hochfürsten, der dem regierenden Rat der Magier vorsteht. Dank eines magischen Kristallschildes sind die Zitadellen trotz jahrelanger Kriege, die das Land verwüsteten, intakt geblieben. Erzmagier Elvaine Morgan stammt aus Lor-Angur, daher sind die Ähnlichkeiten mit Runewick wenig verwunderlich.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("elder")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Brágon', 'Eldan', 'Findari', 'Tanora', or 'Ushara' if you want to know more."))
+talkEntry:addResponse("The Elder Gods rarely trouble themselves with daily life of mortals. All but Tanora left this realm long ago, so your prayers likely wouldn't be heard. Only the foolish would question their power, but few worship the Elder Gods these days, apart from nostalgic elves.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("alte")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Brágon', 'Eldan', 'Findari', 'Tanora' oder 'Ushara', wenn du mehr wissen willst."))
+talkEntry:addResponse("Die Alten Götter mischen sich nur selten in die Belange der Sterblichen ein. Alle außer Tanora verließen diese Ebene vor langer Zeit, also hören sie unsere Gebete vermutlich nicht. Nur die Verrückten würden ihre Macht anzweifeln, aber außer ein paar nostalgischen Elfen betet heutzutage kaum noch jemand zu den Alten Göttern.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("younger")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Adron', 'Cherga', 'Elara', 'Irmorom', 'Malachín', 'Moshran', 'Nargùn', 'Oldra', 'Ronagan', 'Sirani', or 'Zhambra' if you want to know more."))
+talkEntry:addResponse("Elevated by the Elder Gods to guide the mortal races, the eleven Younger Gods dominate daily life in Illarion with each of the realms shaped by three patron deities. Malachín, Sirani and Zhambra are revered above all others in Cadomyr. Many in Galmair follow Irmorom, Nargùn and Ronagan. In Runewick they hold Elara, Adron and Oldra in the highest regard.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("jung")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Adron', 'Cherga', 'Elara', 'Irmorom', 'Malachín', 'Moshran', 'Nargùn', 'Oldra', 'Ronagan', 'Sirani' oder 'Zhambra', wenn du mehr über sie erfahren möchtest."))
+talkEntry:addResponse("Auserwählt von den Alten Göttern, um die sterblichen Völker zu führen, beherrschen die elf Jungen Götter den Alltag in Illarion. Jedes der Reiche ist geprägt von jeweils drei Schutzgöttern. Malachín, Sirani und Zhambra sind die Leitgötter Cadomyrs. Viele in Galmair folgen Irmorom, Nargùn oder Ronagan. In Runewick genießen Elara, Adron und Oldra höchstes Ansehen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("god")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about the 'Elder' Gods, 'Younger' Gods, or any individual god if you want to know more."))
+talkEntry:addResponse("The Five Elder Gods, Brágon, Eldan, Findari, Tanora, and Ushara, created the world and all that inhabit it. In time they selected eleven outstanding representatives of the mortal races to join them in an immense battle against the Prince of Terror, Madrook Na'han. The Younger Gods, Adron, Cherga, Elara, Irmorom, Malachín, Moshran, Nargùn, Oldra, Ronagan, Sirani, or Zhambra, were blessed to guide and protect the mortal races and their influence can be seen throughout Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Gott")
+talkEntry:addTrigger("Gött")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach den 'Alten' Göttern, den 'Jungen' Göttern oder nach einem speziellen Gott, über den du mehr wissen willst."))
+talkEntry:addResponse("Die fünf Alten Götter, Brágon, Eldan, Findari, Tanora und Ushara erschufen die Welt und all ihre Bewohner. Mit der Zeit erwählten sie elf herausragende Repräsentanten der sterblichen Rasse, damit sie ihnen im Kampf gegen den Prinzen des Schreckens, Madrook Na'han, beistünden. Die Jungen Götter Adron, Cherga, Elara, Irmorom, Malachín, Moshran, Nargùn, Oldra, Ronagan, Sirani und Zhambra wurden gesegnet, um die sterblichen Rassen zu führen und ihr Einfluss kann in ganz Illarion gespürt werden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Adron")
+talkEntry:addResponse("Adron is the god of festivities and wine. His charisma and sociability is celebrated amongst the jovial revellers of Runewick. There is also an altar dedicated to Adron out the back of the Hemp Necktie Inn. Pray that the bottle never runs dry!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Adron")
+talkEntry:addResponse("Adron ist der Gott der Feste und des Weins. Sein Charisma und seine Geselligkeit werden von fröhlichen Zechern in Runewick gefeiert. Ein Altar zu seinen Ehren steht auch hinter dem Gasthof zur Hanfschlinge. Bete, dass die Flasche niemals leer wird!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Bragon")
+talkEntry:addTrigger("Brágon")
+talkEntry:addResponse("Brágon is the god of fire. As the Elder Gods left the mortal plane, many of his former worshippers turned to Malachín. Like all the Elder Gods, there is an altar dedicated to him at the Temple of the Five.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Bragon")
+talkEntry:addTrigger("Brágon")
+talkEntry:addResponse("Brágon ist der Gott des Feuers. Als einer der Alten Götter, hat er die Sphäre der Sterblichen verlassen und viele seiner Anhänger haben sich stattdessen Malachín angeschlossen. Wie alle Alten Götter, hat er einen ihm gewidmeten Altar im Tempel der Fünf.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Cherga")
+talkEntry:addResponse("Cherga is the goddess of spirits and the underworld. Although few worship her with particular reverence, all will meet her in time and she is generally respected. Should your adventures take a turn for the worse pray she shows mercy and denies you entry to her realm!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Cherga")
+talkEntry:addResponse("Cherga ist die Göttin der Geister und der Unterwelt. Obwohl nur wenige sie mit besonderer Ehrfurcht verehren, werden alle sie früher oder später treffen. Sie wird im Allgemeinen sehr respektiert. Sollten deine Abenteuer einmal fehlschlagen, bete besser um Gnade und hoffe, dass sie dir den Eintritt in ihr Reich versagt.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Elara")
+talkEntry:addResponse("Elara is the goddess of wisdom and knowledge. Her righteous intentions and pensive nature are held in high esteem amongst the learned of Runewick. Pray she grants you the wisdom to make a good decision about your future!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Elara")
+talkEntry:addResponse("Elara ist die Göttin des Wissens und der Weisheit. Ihre rechtschaffenden Absichten und ihre nachdenkliche Art werden von den Gebildeten Runewicks verehrt. Bete, dass sie dir die Weisheit gibt, eine gute Entscheidung für deine Zukunft zu treffen!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Eldan")
+talkEntry:addResponse("Eldan is the god of spirit. As the Elder Gods left the mortal plane, many of his former worshippers turned to Elara. Like all the Elder Gods, there is an altar dedicated to him at the Temple of the Five.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Eldan")
+talkEntry:addResponse("Eldan ist der Gott des Geistes. Als einer der Alten Götter, hat er die Ebene der Sterblichen verlassen. Viele seiner ehemaligen Anhänger folgen nun Elara. Wie alle Alten Götter, hat er einen ihm gewidmeten Altar im Tempel der Fünf.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Findari")
+talkEntry:addResponse("Findari is the goddess of air. As the Elder Gods left the mortal plane, many of her former worshippers turned to Adron. Like all the Elder Gods, there is an altar dedicated to her at the Temple of the Five.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Findari")
+talkEntry:addResponse("Findari ist die Göttin der Luft. Als eine der Alten Götter, weilt sie nicht mehr in der Ebene der Sterblichen. Viele ihrer einstigen Anhänger folgen nun Adron. Wie alle Alten Götter, hat sie einen ihr gewidmeten Altar im Tempel der Fünf.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Irmorom")
+talkEntry:addResponse("Irmorom is the god of trade and craftsmanship. His righteous intentions with a love of fine craftmanship and ale are held in high esteem by the industrious of Galmair. Do not expect to find good business and wealth in trade without his blessing!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Irmorom")
+talkEntry:addResponse("Irmorom ist der Gott des Handels und des Handwerks. Seine gerechte Art sowie seine Liebe für gutes Handwerk und hervorragendes Bier finden bei Galmairs Arbeitern großen Anklang. Erwarte nicht einen guten Handel oder Reichtum ohne seinen Segen zu erlangen!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Malachin")
+talkEntry:addTrigger("Malachín")
+talkEntry:addResponse("Malachín is the god of battle and hunting. His valour and strong sense of justice are revered by the honourable of Cadomyr. Should you seek the thrill of the hunt or glory in battle pray to him or you won't live past a week!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Malachin")
+talkEntry:addTrigger("Malachín")
+talkEntry:addResponse("Malachín ist der Gott der Jagd und der Schlachten. Seine Tapferkeit und sein starker Sinn für Gerechtigkeit werden von den Edelleuten Cadomyrs verehrt. Wenn du den Kitzel der Jagd oder Ruhm in der Schlacht suchst, bete zu ihm, oder du überlebst keine Woche.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Moshran")
+talkEntry:addResponse("The unspoken one is the god of blood and bones. Once revered as a champion, he defeated the Prince of Terror, but festering wounds left him blighted by raging madness. I daren't say any more than that!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Moshran")
+talkEntry:addResponse("Der Ungenannte ist der Gott des Blutes und der Gebeine. Einst wurde er als Held verehrt, weil er den Prinz des Schreckens besiegte. Doch ewig eiternde Wunden verdarben ihn mit Wahnsinn. Ich wage es nicht mehr als das zu sagen!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Nargun")
+talkEntry:addTrigger("Nargún")
+talkEntry:addTrigger("Nargùn")
+talkEntry:addResponse("Nargùn is the god of chaos and fortune. His quick wit is valued amongst those seeking good fortune in Galmair, as blessed by his favour anything becomes possible. Beware a black feather in your path for he is the trickiest of tricksters!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Nargun")
+talkEntry:addTrigger("Nargún")
+talkEntry:addTrigger("Nargùn")
+talkEntry:addResponse("Nargùn ist der Gott des Chaos und des Glücks. Seine Gewitztheit wird von denen geschätzt, die ihr Glück in Galmair versuchen. Für die, die von ihm gesegnet werden, scheint alles möglich. Sieh dich vor schwarzen Federn auf deinen Wegen vor, er ist der Trickreichste der Trickreichen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Oldra")
+talkEntry:addResponse("Oldra is the Goddess of life and fertility. Her gentle nurturing and humility is favoured amongst farmers tending the fields of Runewick. Should you seek rich soils and bountiful harvests pray to her or you will surely go hungry!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Oldra")
+talkEntry:addResponse("Oldra ist die Göttin des Lebens und der Fruchtbarkeit. Ihre Fürsorge und Demut wird von Bauern, die die Felder von Runewick bestellen, geschätzt. Wenn du nach fruchtbaren Böden und reichen Ernten strebst, bete zu ihr, oder du wirst sicherlich hungern!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Ronagan")
+talkEntry:addResponse("Ronagan is the god of thieves and shadows. His stealth and determined audacity is held in high esteem amongst the underclass of Galmair as they strive for freedom. Most only pray for his protection rather than risk robbery or worse!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Ronagan")
+talkEntry:addResponse("Ronagan ist der Gott der Diebe und der Schatten. Seine Verstohlenheit und seine entschlossene Kühnheit wird in der Unterschicht von Galmair, die nach Freiheit strebt, hoch geschätzt. Die meisten beten allerdings nur für seinen Schutz, statt Diebstahl oder Schlimmeres zu riskieren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Sirani")
+talkEntry:addResponse("Sirani is the goddess of love and pleasure. Amongst the faithful of Cadomyr, few will not recognise her beauty and passion in their beloved Queen. Should you seek your true love be sure to pray to her or you may forever be lonely!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Sirani")
+talkEntry:addResponse("Sirani ist die Götting der Liebe und der Freude. Unter den Gläubigen in Cadomyr werden nur wenige daran zweifeln, dass ihre Schönheit und ihre Leidenschaft in ihrer geliebten Königin vereint sind. Solltest du die wahre Liebe suchen, solltest du dich Sirani zuwenden, oder du könntest für immer alleine bleiben!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Tanora")
+talkEntry:addTrigger("Zelphia")
+talkEntry:addResponse("Tanora is the goddess of water. She is the only Elder God that did not immediately leave the mortal plane. Like all the Elder Gods, there is an altar dedicated to her at the Temple of the Five.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Tanora")
+talkEntry:addTrigger("Zelphia")
+talkEntry:addResponse("Tanora ist die Göttin des Wassers. Sie ist die einzige der Alten Götter, die die Ebene der Sterblichen nie verlassen hat. Wie bei allen Alten Göttern, steht ein ihr gewidmeter Altar im Tempel der Fünf.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Ushara")
+talkEntry:addResponse("Ushara is the goddess of earth. As the Elder Gods left the mortal plane, many of her former worshippers turned to Oldra. Like all the Elder Gods, there is an altar dedicated to her at the Temple of the Five.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Ushara")
+talkEntry:addResponse("Ushara ist die Göttin der Erde. Als sie mit den anderen Alten Göttern die Ebene der Sterblichen verließ, wandten sich viele ihrer Anhänger Oldra zu. Wie bei allen Alten Göttern, steht ein ihr gewidmeter Altar im Tempel der Fünf.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Zhambra")
+talkEntry:addResponse("Zhambra is the god of friendship and loyalty. His righteous intentions and camaraderie are held in high esteem amongst the faithful of Cadomyr. Should you seek the glory of battle or defend all you hold dear, pray he protects and your comrades stand by you!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Zhambra")
+talkEntry:addResponse("Zhambra ist der Gott der Freundschaft und des Vertrauens. Seine gerechten Absichten und seine Kameradschaft werden von den Gläubigen in Cadomyr sehr geschätzt. Solltest du Ruhm in der Schlacht suchen oder deine Liebsten schützen wollen, bete darum, dass er dich beschützt und dir deine Kameraden beistehen!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Madrook")
+talkEntry:addTrigger("Na?han")
+talkEntry:addTrigger("terror")
+talkEntry:addResponse("The arrival of the Prince of Terror, Madrook Na'han, heralded the Age of Struggle. The Elder Gods once fled his Master and now together with their protégées faced his horrific horde. It was the unspoken one who entered into the most cataclysmic of battles to defeat Madrook, but he paid dearly!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Madrook")
+talkEntry:addTrigger("Na?han")
+talkEntry:addTrigger("terror")
+talkEntry:addResponse("Das Auftauchen des Prinzen des Terrors, Madrook Na'han, läutete das Zeitalter des Kampfes ein. Die Alten Götter flohen einst vor seinem Meister und sahen sich nun mit ihren Auserwählten seinen schrecklichen Horden konfrontiert. Es war der Ungenannte, der im tragischsten aller Kämpfe Madrook besiegte. Aber er zahlte einen hohen Preis!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("motiv")
+talkEntry:addTrigger("motif")
+talkEntry:addTrigger("theme")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'honour', 'wealth', or 'wisdom' if you want to know more."))
+talkEntry:addResponse("Each of the three realms developed with a distinct motivation. Honour is the cornerstone of Cadomyr, wealth is the bedrock of Galmair, and wisdom is the essence of Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("motiv")
+talkEntry:addTrigger("thema")
+talkEntry:addTrigger("motif")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Ehre', 'Wohlstand' oder 'Weisheit', wenn du mehr darüber wissen möchtest."))
+talkEntry:addResponse("Jedes der drei Reiche entwickelte sich mit einer eigenen Motivation. Ehre ist der Grundstein Cadomyrs, Reichtum ist das Fundament Galmairs und Weisheit ist die Essenz Runewicks.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("honour")
+talkEntry:addTrigger("honor")
+talkEntry:addResponse("Honour is held in high esteem in Cadomyr and all should seek to emulate the dignified morality of their beloved Queen Rosaline Edwards. Guided by Malachín, justice and integrity are valued, with good manners and respect for hierarchy expected.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Ehre")
+talkEntry:addResponse("Ehre wird in Cadomyr sehr geschätzt und alle sollten versuchen der würdevollen Moral ihrer geliebten Königin Rosaline Edwards nachzueifern. Von Malachín geleitet, werden Gerechtigkeit und Integrität geschätzt, wobei gute Manieren und Respekt vor der Hierarchie erwartet werden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("wealth")
+talkEntry:addResponse("Wealth brings great respect in Galmair and all should seek their fortune should they wish to find favour with the astute Don Valerio Guilianni. Fair trade flourishes under the guidance of Irmorom, and almost everything is valuable to someone.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Reichtum")
+talkEntry:addTrigger("Wohlstand")
+talkEntry:addResponse("Reichtum wird in Galmair mit großem Respekt begegnet und alle sollten nach Glück streben, wenn sie in der Gunst des gerissenen Don Valerio Guilianni aufsteigen wollen. Fairer Handel gedeiht unter der Anleitung von Irmorom und fast alles ist für irgendwen wertvoll.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("wisdom")
+talkEntry:addResponse("Wisdom is held with the greatest regard in Runewick and all should seek to learn from the council of their exalted Archmage Elvaine Morgan. Guided by Elara, gain of knowledge is encouraged and understanding should be sought on the path to enlightenment.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Weisheit")
+talkEntry:addResponse("Weisheit wird in Runewick bewundert und alle sollten versuchen, vom Rat ihres erhabenen Erzmagiers Elvaine Morgan zu lernen. Von Elara geleitet, wird der Erwerb von Wissen gefördert und auf dem Weg zur Erleuchtung sollte Verständnis gesucht werden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("land")
+talkEntry:addTrigger("region")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'desert', 'mountain', 'forest', or 'centre' if you want to know more."))
+talkEntry:addResponse("The fortress town of Cadomyr overlooks the Kantabi Desert in the south west of Illarion, sheltered by towering mountains. Galmair is dug into the foothills of the Nameless Mountains in the north west of the peninsula, overlooking Syrita Bay and the forests beyond. Runewick lies beyond Elstree Forest in the south east, occupying an archipelago of forested islands surrounded by grassy meadows. Be careful on your travels though, the remote north east harbours many dangers and here in the centre, desert, mountains and forests converge into fire!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Land")
+talkEntry:addTrigger("Region")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Wüste', 'Gebirge', 'Wald' oder 'Zentrum', wenn du mehr wissen möchtest."))
+talkEntry:addResponse("Die Festungsstadt Cadomyr überblickt die Kantabi-Wüste im Südwesten von Illarion, geschützt von hohen Bergen. Galmair wurde in die Ausläufer der namenlosen Berge im Nordwesten der Halbinsel gegraben, mit Blick auf die Syrita Bucht und die Wälder dahinter. Runewick liegt jenseits des Elstree -Waldes im Südosten und verteilt sich auf einige bewaldete Inseln, die von grasbewachsenen Wiesen umgeben sind. Sei auf deinen Reisen vorsichtig, der abgelegene Nordosten birgt viele Gefahren und hier im Zentrum laufen Berge und Wälder zu Feuer zusammen!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("desert")
+talkEntry:addTrigger("south west")
+talkEntry:addTrigger("southwest")
+talkEntry:addResponse("Stretching from the mountains to the ocean, the sandy expanse of the Kantabi Desert is cleaved by the Kantabi River as it cascades from high in the Nameless Mountains to course towards the Great Ocean where it diverges to form Kantabi Delta. Only beyond the Border Mountains does sand give way to trees in the form of Sentry Forest. Ruzusss, in Cadomyr, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Wüste")
+talkEntry:addTrigger("süd-west")
+talkEntry:addTrigger("südwest")
+talkEntry:addTrigger("süd west")
+talkEntry:addResponse("Die sandigen Weiten der Kantabi-Wüste erstrecken sich von den Bergen bis zum Ozean. Sie wird vom Kantabi-Fluss durchschnitten, der von hoch in den Namenlosen Bergen in Richtung des Großen Ozeans fließt, wo er auseinander geht und das Kantabi-Delta bildet. Nur jenseits der Grenzberge weicht Sand den Bäumen des Wachtwaldes. Ruzusss in Cadomyr kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Kantabi")
+talkEntry:addResponse("Stretching from the mountains to the ocean, the sandy expanse of the Kantabi Desert is cleaved by the Kantabi River as it cascades from high in the Nameless Mountains to course towards the Great Ocean where it diverges to form Kantabi Delta. Only beyond the Border Mountains does sand give way to trees in the form of Sentry Forest. Ruzusss, in Cadomyr, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Kantabi")
+talkEntry:addResponse("Die sandigen Weiten der Kantabi-Wüste erstrecken sich von den Bergen bis zum Ozean. Sie wird vom Kantabi-Fluss durchschnitten, der von hoch in den Namenlosen Bergen in Richtung des Großen Ozeans fließt, wo er auseinander geht und das Kantabi-Delta bildet. Nur jenseits der Grenzberge weicht Sand den Bäumen des Wachtwaldes. Ruzusss in Cadomyr kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("mountain")
+talkEntry:addTrigger("north west")
+talkEntry:addTrigger("northwest")
+talkEntry:addResponse("Beneath the snow-capped peaks of the Nameless Mountains that isolate Illarion from the mainland, Malachite Creek tumbles down the northern foothills towards Nargun's Plain, joining the Bounding Stream. From the swampy coast of Syrita Bay, lush grassland of the Plains of Silence stretch as far as the Northern Woods. Lotta Medborgar, in Galmair, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Berg")
+talkEntry:addTrigger("Gebirge")
+talkEntry:addTrigger("nordwest")
+talkEntry:addTrigger("nord west")
+talkEntry:addTrigger("nord-west")
+talkEntry:addResponse("Unter den schneebedeckten Gipfeln der Namenlosen Berge, die Illarion vom Festland trennen, stürzt der Malachitbach die nördlichen Ausläufer hinunter in Richtung von Narguns Ebene und mündet in den Grenzstrom. Von der sumpfigen Küste der Syritabucht erstreckt sich das üppige Grasland der Ebene der Stille bis in den nördlichen Wald. Lotta Medborgar in Galmair kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Syrita")
+talkEntry:addResponse("Beneath the snow-capped peaks of the Nameless Mountains that isolate Illarion from the mainland, Malachite Creek tumbles down the northern foothills towards Nargun's Plain, joining the Bounding Stream. From the swampy coast of Syrita Bay, lush grassland of the Plains of Silence stretch as far as the Northern Woods. Lotta Medborgar, in Galmair, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Syrita")
+talkEntry:addResponse("Unter den schneebedeckten Gipfeln der Namenlosen Berge, die Illarion vom Festland trennen, stürzt der Malachitbach die nördlichen Ausläufer hinunter in Richtung von Narguns Ebene und mündet in den Grenzstrom. Von der sumpfigen Küste der Syritabucht erstreckt sich das üppige Grasland der Ebene der Stille bis in den nördlichen Wald. Lotta Medborgar in Galmair kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("forest")
+talkEntry:addTrigger("south east")
+talkEntry:addTrigger("southeast")
+talkEntry:addResponse("An archipelago of forested islands with fertile fields and bountiful glades form a headland that marks the entrance to Snakehead Bay. Beyond the Dewy Swamps and grassy expanse of Eastland, the towering trees of Elstree Forest stretch from the marshes of Death's Stench as far as Snakehead Mountain as it rises above Elstree Plain. Numila Irunnleh, in Runewick, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Wald")
+talkEntry:addTrigger("südost")
+talkEntry:addTrigger("süd-ost")
+talkEntry:addTrigger("süd ost")
+talkEntry:addResponse("Eine Gruppe aus bewaldeten Inseln mit fruchtbaren Feldern und prachtvollen Lichtungen bildet eine Landzunge, die den Eingang zur Schlangenkopfbucht markiert. Jenseits des Todessumpfes und der Grasfläche des Ostlandes erstrecken sich die hoch aufragenden Bäume des Elsbaumwaldes von den Sümpfen des Todesgestanks bis zum Schlangenkopfberg, der sich über der Elsbaumebene erhebt. Numila Irunnleh in Runewick kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Elstree")
+talkEntry:addResponse("An archipelago of forested islands with fertile fields and bountiful glades form a headland that marks the entrance to Snakehead Bay. Beyond the Dewy Swamps and grassy expanse of Eastland, the towering trees of Elstree Forest stretch from the marshes of Death's Stench as far as Snakehead Mountain as it rises above Elstree Plain. Numila Irunnleh, in Runewick, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Elstree")
+talkEntry:addTrigger("Elsbaum")
+talkEntry:addResponse("Eine Gruppe aus bewaldeten Inseln mit fruchtbaren Feldern und prachtvollen Lichtungen bildet eine Landzunge, die den Eingang zur Schlangenkopfbucht markiert. Jenseits des Todessumpfes und der Grasfläche des Ostlandes erstrecken sich die hoch aufragenden Bäume des Elsbaumwaldes von den Sümpfen des Todesgestanks bis zum Schlangenkopfberg, der sich über der Elsbaumebene erhebt. Numila Irunnleh in Runewick kann dir mehr über diesen Teil Illarions erzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("centre")
+talkEntry:addTrigger("center")
+talkEntry:addTrigger("fire")
+talkEntry:addTrigger("north east")
+talkEntry:addTrigger("northeast")
+talkEntry:addResponse("Putrid swamplands and fiery lava flows lay waste to much of Illarion's centre beyond Snakehead Mountain and should only be explored with abundant caution. Only the remote north east can rival in danger with terror lurking beyond the Northern Woods. Wulfgorda, here in Troll's Haven, can tell you more about this part of Illarion.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Zentrum")
+talkEntry:addTrigger("Feuer")
+talkEntry:addTrigger("nordost")
+talkEntry:addTrigger("nord-ost")
+talkEntry:addTrigger("nord ost")
+talkEntry:addResponse("Faulige Sumpfgebiete und feurige Lavaströme verwüsten einen Großteil von Illarions Zentrum jenseits des Schlangenkopfberges und sollten nur mit großer Vorsicht erkundet werden. Nur der abgelegene Nordosten, dessen Schrecken jenseits des nördlichen Waldes lauern, kann mit dieser Gefahr konkurrieren. Wulfgorda, hier in Trollshaven, kann dir mehr über diesen Teil Illarionserzählen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("leader")
+talkEntry:addTrigger("ruler")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Queen Rosaline Edwards', 'Don Valerio Guilianni' or 'Archmage Elvaine Morgan' if you want to know more."))
+talkEntry:addResponse("Three powerful rulers lead the realms of Illarion. Queen Rosaline Edwards reigns over Cadomyr, Don Valerio Guilianni determines Galmair's fate, and Archmage Elvaine Morgan guides Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Anführer")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Königin Rosaline Edwards', 'Don Valerio Guilianni' oder 'Erzmagier Elvaine Morgan', wenn du mehr über sie erfahren möchtest."))
+talkEntry:addResponse("Drei mächtige Anführer regieren die Reiche Illarions. Königin Rosaline Edwards regiert in Cadomyr, Don Valerio Guilianni leitet Galmairs Geschicke und Erzmagier Elvaine Morgen führt Runewick an.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("queen")
+talkEntry:addResponse("Only Cadomyr has a queen! The fair Queen Rosaline Edwards is of noble Albarian heritage and took the throne after the death of her father, King Reginald. Don't let her beauty fool you though, she is a proud and ambitious ruler. Many a loyal and valiant knight seeks to impress their beloved Queen with honourable and glorious endeavours.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("königin")
+talkEntry:addResponse("Nur Cadomyr hat eine Königin! Die holde Königin Rosaline Edwards ist von adeliger Albarischer Abstammung und bestieg den Thron nach dem Tod ihres Vaters, König Reginald. Lass dich nicht von ihrer Schönheit täuschen, sie ist eine stolze, ambitionierte Anführerin. Viele loyale und tapfere Ritter versuchen ihre geliebte Königin mit ruhmvollen und glorreichen Taten zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("rosaline")
+talkEntry:addTrigger("edwards")
+talkEntry:addResponse("Only Cadomyr has a queen! The fair Queen Rosaline Edwards is of noble Albarian heritage and took the throne after the death of her father, King Reginald. Don't let her beauty fool you though, she is a proud and ambitious ruler. Many a loyal and valiant knight seeks to impress their beloved Queen with honourable and glorious endeavours.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("rosaline")
+talkEntry:addTrigger("edwards")
+talkEntry:addResponse("Die holde Königin Rosaline Edwards ist von adeliger Albarischer Abstammung und bestieg den Thron nach dem Tod ihres Vaters, König Reginald. Lass dich nicht von ihrer Schönheit täuschen, sie ist eine stolze, ambitionierte Anführerin. Viele loyale und tapfere Ritter versuchen ihre geliebte Königin mit ruhmvollen und glorreichen Taten zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("don")
+talkEntry:addResponse("Only Galmair has a Don! The dwarf Valerio Guilianni arrived from Gynk in search of riches with his father, Tommaso Guilianni. With Galmair established as a profitable merchant town, he became Don on the untimely demise of his father. Many an industrious craftsman or merchant eagerly seeks to impress their astute Don with their wealth and prosperity.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("don")
+talkEntry:addResponse("Nur Galmair hat einen Don! Der Zwerg Valerio Guilianni kam mit seinem Vater Tommaso Guilianni auf der Suche nach Reichtümern aus Gynk. Nachdem sein Vater vorzeitig verstarb, wurde er Don von Galmair, welches als profitable Handelsstadt gegründet worden war. Viele fleißige Handwerker und Kaufleute versuchen eifrig, ihren klugen Don mit ihrem Reichtum und Wohlstand zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Valerio")
+talkEntry:addTrigger("Guilianni")
+talkEntry:addResponse("Only Galmair has a Don! The dwarf Valerio Guilianni arrived from Gynk in search of riches with his father, Tommaso Guilianni. With Galmair established as a profitable merchant town, he became Don on the untimely demise of his father. Many an industrious craftsman or merchant eagerly seeks to impress their astute Don with their wealth and prosperity.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Valerio")
+talkEntry:addTrigger("Guilianni")
+talkEntry:addResponse("Nur Galmair hat einen Don! Der Zwerg Valerio Guilianni kam mit seinem Vater Tommaso Guilianni auf der Suche nach Reichtümern aus Gynk. Nachdem sein Vater vorzeitig verstarb, wurde er Don von Galmair, welches als profitable Handelsstadt gegründet worden war. Viele fleißige Handwerker und Kaufleute versuchen eifrig, ihren klugen Don mit ihrem Reichtum und Wohlstand zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("archmage")
+talkEntry:addResponse("Only Runewick has an Archmage! The elf Elvaine Morgan arrived with a group of renegade mages from Lor-Angur to found a new seat of learning. Wielding immense magical power, the path of enlightenment can quickly darken if not heeding his advice. Many a learned scholar strives to impress their eclectic Archmage with wise decisions and depth of knowledge.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Erzmagier")
+talkEntry:addResponse("Nur Runewick hat einen Erzmagier! Der Elf Elvaine Morgan kam mit einer Gruppe abtrünniger Magier aus Lor-Angur, um einen neuen Studienort zu gründen. Mit immenser magischer Kraft kann sich der Weg der Erleuchtung schnell verdunkeln, wenn sein Rat nicht beachtet wird. Viele gebildete Gelehrte bemühen sich, ihren weisen Erzmagier mit klugen Entscheidungen und großem Wissen zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Elvaine")
+talkEntry:addTrigger("Morgan")
+talkEntry:addResponse("Only Runewick has an Archmage! The elf Elvaine Morgan arrived with a group of renegade mages from Lor-Angur to found a new seat of learning. Wielding immense magical power, the path of enlightenment can quickly darken if not heeding his advice. Many a learned scholar strives to impress their eclectic Archmage with wise decisions and depth of knowledge.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Elvaine")
+talkEntry:addTrigger("Morgan")
+talkEntry:addResponse("Nur Runewick hat einen Erzmagier! Der Elf Elvaine Morgan kam mit einer Gruppe abtrünniger Magier aus Lor-Angur, um einen neuen Studienort zu gründen. Mit immenser magischer Kraft kann sich der Weg der Erleuchtung schnell verdunkeln, wenn sein Rat nicht beachtet wird. Viele gebildete Gelehrte bemühen sich, ihren weisen Erzmagier mit klugen Entscheidungen und großem Wissen zu beeindrucken.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("politics")
+talkEntry:addTrigger("govern")
+talkEntry:addResponse("Whilst the three rulers seem unlikely to be usurped, political opportunities are abundant. Queen Rosaline nominates nobles to join the Royal Court in Cadomyr, granting them the privilege to form their own house. An elected council of Chancellors assist the Left Hand with Galmair's affairs on behalf of the Don. The Archmage selects advisors to form an academic council to guide Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Politik")
+talkEntry:addTrigger("regier")
+talkEntry:addResponse("Obwohl es unwahrscheinlich scheint, dass die drei Regenten gestürzt werden, gibt es dennoch reichlich politische Möglichkeiten. Königin Rosaline Edwards benennt Adelige für ihren königlichen Hof in Cadomyr und bietet ihnen das Privileg, ein eigenes Haus zu gründen. Ein gewählter Kanzlerrat unterstützt die Linke Hand dabei, Galmairs Angelegenheiten im Namen des Dons zu regeln. Der Erzmagier ernennt Ratgeber, die einen akademischen Rat bilden, um Runewick zu führen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("law")
+talkEntry:addTrigger("custom")
+talkEntry:addTrigger("legal")
+talkEntry:addTrigger("justice")
+talkEntry:addResponse("Cadomyr follows traditional customs, although interpretation of these is less strict than their Albarian origin. Galmair has simple rules that allow a good deal of freedom, but these remain open to the Don's discretion. Runewick considers itself the most enlightened community with a written constitution. Laws can quickly change though with a new administration.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Gesetz")
+talkEntry:addTrigger("brauch")
+talkEntry:addTrigger("gerecht")
+talkEntry:addTrigger("legal")
+talkEntry:addResponse("Cadomyr folgt traditionellen Bräuchen, die allerdings weniger strikt ausgelebt werden, als in ihren albarischen Ursprüngen. Galmair hat einfache Regeln, die jedem Bürger eine Menge Freihheit erlauben, allerdings der Willkür des Dons unterliegen. Da sie eine niedergeschriebene Verfassung haben, betrachtet man sich in Runewich als am Erhabensten. Die Gesetze können sich allerdings unter einer neuen Führung schnell ändern.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Found")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'Edward', 'Tommaso' or 'renegade' if you want to know more."))
+talkEntry:addResponse("The three realms of Illarion were all founded within a few years of each other at the time Kharud began to dominate the Old Empires. Cadomyr was founded by an Albarian prince called Edward, Galmair was established by a dwarven merchant from Gynk by the name of Tommaso Guilianni, and Runewick was the creation of a group of renegade mages from Lor-Angur led by Elvaine Morgan.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("gründ")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Edward', 'Tommaso' oder 'Abtrünnige', wenn du mehr darüber erfahren möchtest."))
+talkEntry:addResponse("Die drei Reiche Illarions wurden alle innerhalb weniger Jahre gegründet, zu einer Zeit in der Kharud begann die Alten Imperien einzunehmen. Cadomyr wurde von einem Albarischen Prinzen namens Edward gegründet. Galmair wurde von Tommaso Guilianni, einem Zwergenhändler aus Gynk, gegründet und Runewick war die Schöpfung einer Gruppe abtrünniger Magier, die von Elvaine Morgan aus Lor-Angur geführt wurden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Edward")
+talkEntry:addResponse("Impatient to succeed his father, a petulant young Albarian Prince Edward seized the old King's riches and fled Kharud, founding the first settlement of Cadomyr near Sentry Forest. Tormented by guilt, however, his was not to be a happy ending and he was succeeded by his loyal comrade and cousin, Sir Reginald, the father of Queen Rosaline Edwards.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Edward")
+talkEntry:addResponse("Ungeduldig seinen Vater zu beerben, nahm der junge Albarische Prinz Edward die Besitztümer des alten Königs an sich und floh vor Kharud. Im Wachtwald gründete er die erste Siedlung Cadomyr. Gequält von Schuldgefühlen, nahm sein Leben allerdings kein glückliches Ende und sein treuer Kamerad und Cousin, Sir Reginald, der Vater von Königin Rosaline Edwards, trat seine Nachfolge an.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Tommaso")
+talkEntry:addResponse("Hearing rumours of vast gold deposits in the Nameless Mountains, the dwarven merchant Tommaso Guilianni and his son Valerio arrived from Gynk to establish new trade routes in the wake of Kharud's destruction. Their prospecting angered indigenous clans but the rebellions were quickly quashed and the mountain stronghold of Galmair was founded.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Tommaso")
+talkEntry:addResponse("Als er Gerüchte über reiche Goldvorkommen in den Namenlosen Bergen hörte, reiste Tommaso Guilianni mit seinem Sohn Valerio aus Gynk an, um eine neue Handelsroute im Schatten der Zerstörung durch Kharud zu etablieren. Ihre Bemühungen verärgerte eingeborene Clans, doch die Rebellionen wurden schnell niedergeschlagen und die Bergfestung Galmair wurde gegründet.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("renegade")
+talkEntry:addResponse("When the High Lord Protector resolved to remain neutral and refused to challenge the growing threat of Kharud, a group of renegade mages left Lor-Angur to found their own academy here in Illarion. The mages created an immense arcane structure which once had four elemental towers rising above forested isles, instating Elvaine Morgan as Archmage of Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Abtrünnig")
+talkEntry:addResponse("Als der Hochfürst beschloss, neutral zu bleiben und sich weigerte, sich der wachsenden Bedrohung durch Kharud entgegenzustellenf, verließ eine Gruppe abtrünniger Magier Lor-Angur, um hier in Illarion eine eigene Akademie zu gründen. Die Magier schufen eine immense arkane Struktur mit vier Elementartürmen, die sich einst über den bewaldeten Inseln erhoben, und setzten Elvaine Morgan als Erzmagier von Runewick ein.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("gem")
+talkEntry:addTrigger("stone")
+talkEntry:addTrigger("power")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about 'topaz', 'amethyst', 'obsidian', 'sapphire', 'emerald', 'ruby', or 'diamond' if you want to know more."))
+talkEntry:addResponse("The gods created seven gems of immense magical power, with six to be distributed between the races, while the diamond remained in their hands. Nothing is known of the first custodians of these gems but nowadays each of the rulers of Illarion holds two, bringing protection to their realms. Queen Rosaline Edwards holds the topaz and amethyst, Don Valerio Guilianni holds the obsidian and sapphire, and Archmage Elvaine Morgan holds the emerald and ruby.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Stein")
+talkEntry:addTrigger("Macht")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Frag nach 'Topas', 'Amethyst', 'Obsidian', 'Saphir', 'Smaragd', 'Rubin' oder 'Diamant', wenn du mehr über einen der Steine wissen willst."))
+talkEntry:addResponse("Die Götter erschufen sieben Edelsteine von gewaltiger Macht. Sechs davon wurden an die Sterblichen übergeben, während der Diamant in ihren Händen blieb. Es ist nicht bekannt, wer die Steine als Erstes hielt, doch heutzutage sind jeweils zwei im Besitz der Regenten Illarions, die zum Schutz der Reiche genutzt werden. Königin Rosaline Edwards besitzt den Topas und den Amethyst, Don Valerio Guilianni hält den Obsidian und den Saphir und Erzmagier Elvaine Morgan ist im Besitz des Smaragds und des Rubins.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("topaz")
+talkEntry:addResponse("Queen Rosaline Edwards of Cadomyr inherited the magical topaz from her father, King Reginald. It was once stolen by Prince Edward from his own father, but when the first King of Cadomyr died in battle he bequeathed the precious stone to his cousin.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Topas")
+talkEntry:addResponse("Königin Rosaline Edwards von Cadomyr erbte den magischen Topas von ihrem Vater, König Reginald. Einst wurde es von Prinz Edward von dessen Vater gestohlen, doch als der erste König Cadomyrs im Kampf umkam, gab er diesen kostbaren Stein an seinen Cousin weiter.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("amethyst")
+talkEntry:addResponse("Queen Rosaline Edwards of Cadomyr inherited the magical amethyst from her father, King Reginald. In the battle against Kharud, the brave Sir Reginald seized the precious stone after defeating one of the Sorcerer's generals.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Amethyst")
+talkEntry:addResponse("Königin Rosaline Edwards von Cadomyr erbte den magischen Amethyst von ihrem Vater, König Reginald. Im Kampf gegen Kharud, gelangte der tapfere Sir Reginald in den Besitz dieses kostbaren Steins, als er einen der Generäle des Hexers besiegte.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("obsidian")
+talkEntry:addResponse("Don Valerio Guilianni of Galmair inherited the magical obsidian on the death of his father, Tomasso Guilianni. The young Valerio once boasted they used the precious stone to subdue rebellious local dwarven clans when they founded Galmair.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Obsidian")
+talkEntry:addResponse("Don Valerio Guilianni aus Galmair erbte den magischen Obsidian von seinem Vater Tomasso Guilianni. Der junge Valerio gab einmal damit an, dass sie diesen kostbaren Stein nutzten, um die rebellischen Zwergenclans niederzuschlagen, als sie Galmair gründeten.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("sapphire")
+talkEntry:addResponse("Don Valerio Guilianni of Galmair inherited the magical sapphire on the death of his father, Tomasso Guilianni. In the battle against Kharud, the shrewd Tomasso Guilianni seized the precious stone after defeating one of the Sorcerer's generals.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Saphir")
+talkEntry:addResponse("Don Valerio Guilianni erbte den magischen Saphir von seinem Vater Tomasso Guilianni. Im Kampf gegen Kharud, gelangte der gerissene Tomasso Guilianni in den Besitz dieses kostbaren Steins, nachdem er einen der Generäle des Hexers besiegte.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Emerald")
+talkEntry:addResponse("Archmage Elvaine Morgan of Runewick has held the magical emerald for thousands of years. Nobody knows if he was the first custodian of the gem, entrusted with the precious stone by the gods themselves, or he acquired it by other means in Lor-Angur.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Smaragd")
+talkEntry:addResponse("Erzmagier Elvaine Morgan aus Runewick ist bereits seit tausenden Jahren im Besitz des magischen Smaragds. Niemand weiß, ob er der erste Besitzer des Steins ist und die Götter ihm diesen direkt anvertrauten, oder ob er ihn sich anderweitig in Lor-Angur angeeignet hat.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Ruby")
+talkEntry:addResponse("Archmage Elvaine Morgan of Runewick has held the magical ruby since the fall of the sorcerer Kharud. In the battle against Kharud, the wise Elvaine Morgan seized the precious stone after defeating one of the Sorcerer's generals.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Rubin")
+talkEntry:addResponse("Erzmagier Elvaine Morgan aus Runewick besitzt den magischen Rubin seit dem Fall des Hexers Kharud. Im Kampf gegen Kharud, nahm der weise Elvaine Morgan diesen wertvollen Stein einem General des Hexers ab, nachdem er diesen besiegt hatte.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Diamond")
+talkEntry:addResponse("Only six gems were bequeathed to the mortal races, the diamond remained under the watchful guardianship of the gods themselves. Nobody knows where it can be found or what power it holds.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Diamant")
+talkEntry:addResponse("Nur sechs Edelsteine wurden den sterblichen Rassen anvertraut. Der Diamant bleibt in der wachsamen Obhut der Götter selbst. Niemand weiß wo er gefunden werden kann, oder welche Kräfte ihm innewohnen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Kharud")
+talkEntry:addResponse("The sorcerer Kharud once held three magical gems, bringing swift victories as he crushed the Old Empires with his mighty legions. Only when the three rulers of Illarion came together did they have the power to defeat Kharud.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Kharud")
+talkEntry:addResponse("Der Hexer Kharud besaß einst drei magische Edelsteine, die ihm einfache Siege über die alten Imperien einbrachten. Nur vereint waren die drei Regenten Illarions in der Lage, die Kraft Kharuds zu übertreffen und ihn letztendlich zu besiegen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("craft")
+talkEntry:addConsequence(consequence_inform("[Game Help] Ask about gathering materials through 'digging', 'farming', 'fishing', 'herblore', 'husbandry, 'mining', 'tanning and weaving', and 'woodcutting', or about the crafts 'armourer', blacksmithing', 'brewing', 'carpentry', 'cooking and baking', 'finesmithing', 'grinding', 'glass blowing', 'pottery', 'tailoring', if you want to know more."))
+talkEntry:addResponse("Each realm is renowned for their specialist crafts, supported by abundant resources. In Cadomyr crafters excel at glassblowing, tailoring and pottery. Galmair is acclaimed for all kinds of smithing and gem cutting. Runewick is famous for delicious food and drink, as well as fine carpentry. Which craft would you like to know more about?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Handwerk")
+talkEntry:addConsequence(consequence_inform("[Spielhilfe] Wenn du mehr über das Sammeln von Ressourcen erfahren möchtest, frag nach 'Graben', 'Ackerbau', 'Fischen', 'Kräuterkunde', 'Landwirtschaft', 'Bergbau', 'Weben und Gerben' oder 'Holzfällen'. Oder frag nach Handwerken, 'Rüstungsschmieden', 'Waffenschmieden', 'Brauen', 'Schreinern', 'Kochen und Backen', 'Feinschmieden', 'Schleifen', 'Glasblasen', 'Töpfern' oder 'Nähen'."))
+talkEntry:addResponse("Jedes Reich ist bekannt für seine spezialisierten Handwerker, die von lokalen Ressourcen in ihrem Treiben unterstützt werden. In Cadomyr sind vor allem die Glasbläser, Töpfer und Schneider bekannt. Galmair ist berühmt für seine Schmiede und Edelsteinschleifer. Runewicks Speisen und Getränke sind vorzüglich, genau wie die örtlichen Schreiner. Über welches Handwerk möchtest du mehr erfahren?")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("dig")
+talkEntry:addResponse("Diggers will find plenty of clay and sand near Cadomyr to supply glassblowers and potters. Runewick isn't a bad place either to find pits for digging, but sand is especially scarce in Galmair.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("grab")
+talkEntry:addTrigger("Gräb")
+talkEntry:addResponse("Gräber werden reichlich Sand und Lehm nahe Cadomyr finden, mit denen sie Glasbläser und Töpfer versorgen können. Runewick hat ebenfalls ein paar Gruben in denen man graben kann, doch in Galmair sucht man Sand vergeblich.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("farm")
+talkEntry:addTrigger("peasant")
+talkEntry:addResponse("Runewick has fertile soil and a mild climate perfect for farming, with fields close to town and in Yewdale. Although cooler, Galmair also has productive fields, but nothing will grow in the desert around Cadomyr.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Bauer")
+talkEntry:addTrigger("Bäuer")
+talkEntry:addTrigger("farm")
+talkEntry:addTrigger("acker")
+talkEntry:addResponse("Runewick hat fruchtbaren Boden und das milde Klima ist perfekt für Ackerbau. Felder findest du nahe der Stadt und in Eibenthal. Obwohl es in Galmair etwas kühler ist, gibt es auch dort ergiebige Felder. In der Wüste Cadomyrs jedoch wächst nichts.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("fish")
+talkEntry:addResponse("Surrounded by water, there are abundant shoals of fish around the islands of Runewick. Galmair also has a good supply of fish, but Cadomyr depends on trade of the smoked catch from elsewhere.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Fisch")
+talkEntry:addTrigger("angel")
+talkEntry:addResponse("Die Inseln Runewicks sind umgeben von Wasser, in denen Fischschwärme reichlich vorkommen. Auch Galmair hat gute Fischgründe. Cadomyr ist gänzlich auf den Handel von anderswo angewiesen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("herb")
+talkEntry:addResponse("Herbs can be gathered all over Illarion with different plants found in grassland, forests, swamps, mountains, and deserts. Alchemists always need a good supply of fresh herbs for their concoctions, no matter where they work.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Kräuter")
+talkEntry:addTrigger("sammler")
+talkEntry:addTrigger("Kraut")
+talkEntry:addResponse("Kräuter können überall in Illarion gefunden werden. Verschiedene Pflanzen wachsen an verschiedenen Orten, sei es eine Wiese, ein Wald, ein Sumpf, das Gebirge oder die Wüste. Alchemisten brauchen immer einen Vorrat an frischen Kräutern, für ihre Gebräue, ganz gleich wo sie arbeiten.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("husbandry")
+talkEntry:addResponse("Honey, milk and eggs are all easily gathered around Runewick and are much sought after by cooks and bakers. Galmair also has a plentiful supply, but they are scarce in the desert around Cadomyr.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("landwirt")
+talkEntry:addResponse("Honig, Milch und Eier lassen sich ganz einfach um Runewick herum finden und sie werden ständig von Köchen und Bäckern benötigt. Galmair hat ebenfalls reiche Vorräte, aber in der Wüste Cadomyrs sucht man vergeblich.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("mining")
+talkEntry:addTrigger("smelt")
+talkEntry:addResponse("Plenty of miners make use of Galmair's mines and smiths depend on the abundant ores smelted. Cadomyr also lays claim to some nearby mines, but you will not find any around Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Schürf")
+talkEntry:addTrigger("Bergbau")
+talkEntry:addResponse("Viele Bergleute nutzen Galmairs Minen und Schmiede verlassen sich auf das reiche Erzvorkommen. Auch Cadomyr hat ein paar nahegelegene Minen. In der Nähe von Runewick, wrist du allerdings keine Minen finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("tan")
+talkEntry:addTrigger("weave")
+talkEntry:addTrigger("weaving")
+talkEntry:addTrigger("dye")
+talkEntry:addResponse("Cadomyr's tailors depend on hides for tanning and wool for spinning and weaving into cloth that can be dyed. Runewick also produces some cloth and leather, but sheep are scarce around Galmair.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Gerbe")
+talkEntry:addTrigger("Färber")
+talkEntry:addTrigger("Farbe")
+talkEntry:addTrigger("webe")
+talkEntry:addResponse("Cadomyrs Schneider sind abhängig von Häuten, die sie gerben, von Wolle, die sie spinnen und in Stoffe weben, die gefärbt werden können. Runewick produziert ebenfalls Stoff und Leder, nur Galmair hat keine Schafe.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("wood")
+talkEntry:addTrigger("lumber")
+talkEntry:addTrigger("log")
+talkEntry:addResponse("Runewick is set amongst forested islands so there are plenty of trees for wood cutters to supply the carpenters. Galmair also has a good supply of wood, but trees are more scarce in the desert surrounding Cadomyr.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Holz")
+talkEntry:addTrigger("fäll")
+talkEntry:addTrigger("hack")
+talkEntry:addResponse("Runewick liegt verteilt auf bewaldeten Inseln, also bieten sich Holzfällern viele Bäume an, mit deren Holz sie Schreiner versorgen können. Eine hohe Anzahl an Bäumen wirst du auch um Galmair herum finden, doch in der kargen Wüste Cadomyrs sind Bäume spärlich gesäht.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("armour")
+talkEntry:addTrigger("armor")
+talkEntry:addResponse("Galmair is renowned for metal work and many talented armourers can be found smithing at the anvils there. You should also be able to find a smith able to wield a hammer in Cadomyr, but Runewick has to trade for armour.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("rüstung")
+talkEntry:addResponse("Galmair ist bekannt für Metallarbeiten und viele talentierte Rüstungsschmiede sammeln sich um die Ambosse dort. Mit etwas Glück findest du auch in Cadomyr einen Schmied, der weiß wie man einen Hammer schwingt. Runewick ist auf Handel mit Rüstungen angewiesen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("black")
+talkEntry:addResponse("Galmair is renowned for metal work and many blacksmiths produce tools and weapons there. You should also be able to find one able to forge what you need in Cadomyr, but Runewick has to trade for such metal wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("waffen")
+talkEntry:addTrigger("werkzeug")
+talkEntry:addResponse("Galmair ist bekannt für Metallarbeiten und viele Schmiede stellen dort Waffen und Werkzeuge her. Auch in Cadomyr kannst du manche finden, die diesem Handwerk nachgehen, doch Runewick muss Metallwaren importieren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("brew")
+talkEntry:addResponse("Runewick is celebrated for countless tasty beverages brewed by resident brewers. Galmair can also produce some fine ale, amongst other things, but Cadomyr largely depends on trade to supply the tavern.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Brau")
+talkEntry:addTrigger("Bräu")
+talkEntry:addResponse("Die örtlichen Brauer machen Runewicks vielzählige Getränke berühmt. Auch Galmair produziert manch gutes Bier, aber Cadomyrs Taverne muss seine Vorräte durch Handel mit den anderen Reichen auf Stand halten.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("carpenter")
+talkEntry:addTrigger("carpentry")
+talkEntry:addTrigger("wood work")
+talkEntry:addTrigger("carve")
+talkEntry:addTrigger("carving")
+talkEntry:addResponse("Proficient carpenters are mainly found in Runewick with abundant wood supplied from the surrounding forests. Galmair also supports some carpenters, but Cadomyr depends on trade to obtain wooden wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Schreiner")
+talkEntry:addTrigger("schnitze")
+talkEntry:addResponse("Mit reichlichen Holzvorkommen in den umliegenden Wäldern, finden sich kompetente Schreiner hauptsächlich in Runewick. Galmair beherbergt auch einige Schreiner, während Cadomyr auf Handel angewiesen ist, um an Holzwaren zu gelangen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("cook")
+talkEntry:addTrigger("bake")
+talkEntry:addTrigger("baking")
+talkEntry:addResponse("Runewick is acclaimed for the tasty delights produced in the kitchen by bakers and cooks. Galmair can also provide some palatable alternatives, but Cadomyr largely depends on trade to feed the population.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Koch")
+talkEntry:addTrigger("Bäcker")
+talkEntry:addTrigger("back")
+talkEntry:addResponse("Runewick ist bekannt für leckere Köstlichkeiten, die Bäcker und Köche in der Küche zubereiten. Galmair kann auch einiges Schmackhaftes bieten, aber Cadomyr ist weitgehend vom Handel abhängig, um die Bevölkerung zu ernähren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("fine")
+talkEntry:addTrigger("gold")
+talkEntry:addTrigger("jewel")
+talkEntry:addResponse("Galmair is renowned for metal work and many finesmiths produce beautiful jewellery and other intricate wares there. Cadomyr also supports some finesmiths, but Runewick has to trade for such precious wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Feinschmied")
+talkEntry:addTrigger("Goldschmied")
+talkEntry:addTrigger("schmuck")
+talkEntry:addResponse("Galmair ist bekannt für Metallarbeiten und viele Feinschmiede stellen dort schönen Schmuck und andere feine Waren her. Cadomyr unterstützt auch einige Goldschmiede. Runewick ist auf den Handel mit solch kostbaren Waren angewiesen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("cut")
+talkEntry:addTrigger("grind")
+talkEntry:addTrigger("polish")
+talkEntry:addResponse("Gem cutters in Galmair produce the most precisely polished stones and grind the best refined powders. Cadomyr's mines also support a good number of gem grinders, but Runewick must trade for such gems and powders.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("schleife")
+talkEntry:addTrigger("polier")
+talkEntry:addResponse("Edelsteinschneider in Galmair produzieren die am präzisesten polierten Steine und mahlen sie zu feinstem Pulver. Cadomyrs Minen unterstützen auch eine gute Anzahl von Edelsteinschleifern, aber Runewick muss solche Edelsteine und Pulver importieren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("glass")
+talkEntry:addTrigger("blow")
+talkEntry:addResponse("With so much sand around, Cadomyr has always been renowned for glassblowing and produces sparkling glassware. Runewick also supports some glassblowers, but without any sand Galmair must trade for bottles and such wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Glasbläser")
+talkEntry:addTrigger("Glasblas")
+talkEntry:addResponse("Umgeben von so viel Sand, ist es kaum verwunderlich, dass Cadomyrs Glasbläser bekannt sind für ihre funkelnden Produkte. Auch Runewick hat ein paar Glasbläser, aber ohne Sand gibt es auch keine Glasbläserei in Galmair, sie müssen Flaschen und ähnliches erwerben.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("potter")
+talkEntry:addTrigger("brick")
+talkEntry:addResponse("Potters work abundant clay and fire countless bricks and ornate vases in the kilns of Cadomyr. Runewick also has working kilns, but Galmair mostly trades for such clay products.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Töpfer")
+talkEntry:addTrigger("topf")
+talkEntry:addTrigger("ziegel")
+talkEntry:addResponse("Töpfer arbeiten mit den reichen Lehmvorkommen in Cadomyr und brennen dort unzählige Ziegel und kostbare Vasen in den Brennöfen. Auch Runewick besitzt Brennöfen, während man in Galmair vergeblich nach lokalen Tonerzeugnissen sucht.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("tailor")
+talkEntry:addTrigger("dress")
+talkEntry:addResponse("Cadomyr's tailors are renowned for their intricate stitching of colourful garments and robust leather wear. You should also be able to find a tailor able to stitch in Runewick, but Galmair largely depends on trade for tailored wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Schneider")
+talkEntry:addTrigger("kleid")
+talkEntry:addTrigger("nähen")
+talkEntry:addResponse("Die Schneider von Cadomyr sind bekannt für ihre aufwändigen Schneiderein aus bunten Stoffen und ihre robusten Lederrüstungen. Du solltest auch in Runewick jemanden finden können, der nähen kann, aber Galmair hängt weitestgehend vom Handel mit genähten Waren ab.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("candle")
+talkEntry:addTrigger("chandler")
+talkEntry:addResponse("Chandlers are most commonly found in Runewick thanks to the abundant supply of wax. Galmair also supports some candle making but Cadomyr must depend on other sources of light or trade for such wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Kerzen")
+talkEntry:addResponse("Kerzenzieher sind in Runewick am häufigsten anzutreffen, da reichlich Wachs vorhanden ist. Galmair unterstützt auch die Herstellung von Kerzen, aber Cadomyr muss sich auf andere Lichtquellen verlassen oder Kerzen importieren.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("mason")
+talkEntry:addResponse("Masons cut and sculpt the plentiful stone brought in from Galmair's mines. The mines close to Cadomyr also support some masons, but Runewick is dependent on trade of stone wares.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Metz")
+talkEntry:addResponse("Steinmetze behauen und formen eine Vielzahl an Steinen, die Galmairs Minen hervorbringen. Auch die Minen Cadomyrs sind ergiebig, doch Runewick muss auf Handel für Steinwaren zurückgreifen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("smith")
+talkEntry:addResponse("Armourers, blacksmiths, and finesmiths are all best found in Galmair. Cadomyr also supports such metal work, but you are unlikely to find any such crafters in Runewick.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("schmied")
+talkEntry:addResponse("Rüstungsschmiede, Waffenschmiede und Goldschmiede finden sich vor allem in Galmair. Auch Cadomyr fördert die Arbeit mit Metallen. Es ist allerdings unwahrscheinlich Schmiede irgendeiner Art in Runewick zu finden.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("hunter")
+talkEntry:addTrigger("fighter")
+talkEntry:addTrigger("soldier")
+talkEntry:addTrigger("guard")
+talkEntry:addResponse("Those adept at wielding a weapon can find work in any realm, be it hunting, adventuring, or defending your homeland.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("jäge")
+talkEntry:addTrigger("jagd")
+talkEntry:addTrigger("Kämpfer")
+talkEntry:addTrigger("Soldat")
+talkEntry:addTrigger("Wache")
+talkEntry:addResponse("Diejenigen, die mit Waffen umgehen können, können in jedem Reich Arbeit finden, sei es bei der Jagd, unterwegs auf Abenteuern oder bei der Verteidigung ihres Heimatlandes.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("alchemist")
+talkEntry:addTrigger("alchemy")
+talkEntry:addTrigger("potion")
+talkEntry:addResponse("Alchemists can find a cauldron to work with in any of the realms, supported by a good supply of local herbs and those collected across the lands.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("alchem")
+talkEntry:addTrigger("trank")
+talkEntry:addResponse("Alchemisten finden in jedem Reich Kessel, an denen sie arbeiten können. Örtlich unterschiedliche Kräuter und auch jene, die über ganz Illarion verteilt sind, stellen eine wichtige Grundlage dar.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("mage")
+talkEntry:addTrigger("magic")
+talkEntry:addTrigger("arcane")
+talkEntry:addResponse("Runewick was founded by mages but those adept at manipulating mana can make use of their talents in any realm.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("magie")
+talkEntry:addTrigger("arkan")
+talkEntry:addResponse("Runewick wurde von Magiern gegründet, doch jene, die in der Lage sind Mana zu kontrollieren, sind mit ihren Talenten in allen Reichen willkommen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("glyph")
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addResponse("Runewick was founded by mages but those adept at manipulating mana can make use of their talents in any realm.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("glyph")
+talkEntry:addResponse("Runewick wurde von Magiern gegründet, doch jene, die in der Lage sind Mana zu kontrollieren, sind mit ihren Talenten in allen Reichen willkommen.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("tell")
+talkEntry:addTrigger("something")
+talkEntry:addResponse("All I have is information about the realms, and I'll give that to you for free!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("erzähl was")
+talkEntry:addTrigger("erzähl etwas")
+talkEntry:addResponse("Von mir bekommst du Informationen über die Reiche und die sind umsonst!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger("Viola")
+talkEntry:addTrigger("Baywillow")
+talkEntry:addResponse("That's me! If you want information about the realms look no further!")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger("Viola")
+talkEntry:addTrigger("Baywillow")
+talkEntry:addResponse("Das bin ich und ich weiß viele wichtige Dinge über die Reiche.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addCondition(condition_language("english"))
+talkEntry:addTrigger(".*")
+talkEntry:addResponse("Sorry, I don't quite understand. Just ask me for 'help' and I'll see what I can do for you.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+do
+local talkEntry = talk.talkNPCEntry()
+talkEntry:addTrigger(".*")
+talkEntry:addResponse("Das habe ich jetzt nicht richtig verstanden. Frag mich einfach nach 'Hilfe' und ich schau, was ich für dich tun kann.")
+talkingNPC:addTalkingEntry(talkEntry)
+end
+talkingNPC:addCycleText("Hiho Reisender! Falls du neu hier bist, heiße ich dich herzlich willkommen in Illarion! Wenn du Hilfe brauchst, sag einfach Bescheid.", "Hiho traveller! If you are new to these lands, welcome to Illarion! Just ask me for help if you need any assistance.")
+talkingNPC:addCycleText("Trollshaven ist die Heimat des Gasthofes zur Hanfschlinge und ist jederzeit einen Besuch wert, auch wenn es natürlich ein richtiges Zuhause nicht ersetzt.", "Troll's Haven is home of the Hemp Necktie Inn and is always worth a visit, but there is no place like home!")
+talkingNPC:addCycleText("Oh Mann, es gibt so viel über Illarion zu lernen!", "Gosh! There is so much to learn about Illarion!")
+talkingNPC:addCycleText("Reiche, Anführer, Handwerke, Motivationen, Landschaften und sogar Götter! Schlag ein Thema vor, ich weiß alles... Naja, fast alles!", "Realms, leaders, crafts, motives, landscapes, even gods! You name it, I know it... well nearly all!")
+talkingNPC:addCycleText("Wenn du etwas über die drei Reiche erfahren möchtest, kann ich dir vielleicht davon erzählen.", "If there was something you wanted to know about the three realms, I could probably tell you.")
+talkingNPC:addCycleText("Hiho! Ich kann dir alles über die drei Reiche Illarions erzählen!", "Hiho! I can tell you all about the three realms of Illarion.")
+talkingNPC:addCycleText("Hiho! Falls du nach Abenteuern suchst, findest du in ganz Illarion einiges zu tun und zu erkunden.", "Hiho! If you're looking for adventures there are plenty of quests to be found all over Illarion.")
+talkingNPC:addCycleText("Wenn du nach Arbeit suchst, scheu dich nicht davor, herumzufragen. Die Leute haben immer etwas für dich zu tun.", "If you're looking for work, don't be afraid to ask around as people always need tasks doing.")
+talkingNPC:addCycleText("Verlauf dich nicht! Ich kann dir eine Menge Hinweise geben, damit du dich zurechtfindest.", "Don't get lost! I can offer you lots of advice to help you find your way.")
+talkingNPC:addCycleText("Ganz gleich wer du bist oder was du tust, ich kann dir helfen einen Ort zu finden, den du dein Zuhause nennen kannst!", "No matter who you are or what you do, I can find you a place to call home!")
+mainNPC:addLanguage(0)
+mainNPC:addLanguage(6)
+mainNPC:setDefaultLanguage(0)
+mainNPC:setLookat("Das ist deine Tutorin Viola Baywillow.", "This is your tutorial guide Viola Baywillow.")
+mainNPC:setUseMessage("Finger weg!", "Do not touch me!")
+mainNPC:setConfusedMessage("Bitte wechsle die Sprache deines Charakters zur Gemeinsprache mit dem Befehl '!l common'.", "Please switch the language of your character to the common tongue using the command '!l common'.")
+mainNPC:setEquipment(1, 0)
+mainNPC:setEquipment(3, 803)
+mainNPC:setEquipment(11, 0)
+mainNPC:setEquipment(5, 0)
+mainNPC:setEquipment(6, 106)
+mainNPC:setEquipment(4, 2295)
+mainNPC:setEquipment(9, 34)
+mainNPC:setEquipment(10, 369)
+mainNPC:setAutoIntroduceMode(true)
+
+mainNPC:initDone()
+return mainNPC
+end
+local mNPC = initNpc()
+initNpc = nil
+local M = {}
+function M.receiveText(npcChar, texttype, message, speaker) mNPC:receiveText(npcChar, texttype, speaker, message) end
+function M.nextCycle(npcChar) mNPC:nextCycle(npcChar) end
+function M.lookAtNpc(npcChar, char, mode) mNPC:lookAt(npcChar, char, mode) end
+function M.useNPC(npcChar, char, counter, param) mNPC:use(npcChar, char) end
+return M
