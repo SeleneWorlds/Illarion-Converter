@@ -176,6 +176,24 @@ async function run(basePath) {
     recursive: true,
   });
 
+  // Copy any extra files into the bundles
+  const extraDir = join(basePath, "extra");
+  const bundlesDir = join(basePath, "bundles");
+  if (existsSync(extraDir)) {
+    console.log("Copying extra files into bundles...");
+    const entries = readdirSync(extraDir, { withFileTypes: true });
+    for (const entry of entries) {
+      const srcPath = join(extraDir, entry.name);
+      const destPath = join(bundlesDir, entry.name);
+      if (entry.isDirectory()) {
+        cpSync(srcPath, destPath, { recursive: true });
+      } else if (entry.isFile()) {
+        ensureDirSync(dirname(destPath));
+        cpSync(srcPath, destPath);
+      }
+    }
+  }
+
   console.log("Analyzing scripts...");
   const preloads = scanLuaFiles(output.scriptBundle.luaDir);
 
@@ -198,24 +216,6 @@ async function run(basePath) {
     name: `illarion-${output.variant}-data`,
     description: "Data definitions for Illarion as a Selene bundle.",
   });
-
-  // Copy any extra files into the bundles
-  const extraDir = join(basePath, "extra");
-  const bundlesDir = join(basePath, "bundles");
-  if (existsSync(extraDir)) {
-    console.log("Copying extra files into bundles...");
-    const entries = readdirSync(extraDir, { withFileTypes: true });
-    for (const entry of entries) {
-      const srcPath = join(extraDir, entry.name);
-      const destPath = join(bundlesDir, entry.name);
-      if (entry.isDirectory()) {
-        cpSync(srcPath, destPath, { recursive: true });
-      } else if (entry.isFile()) {
-        ensureDirSync(dirname(destPath));
-        cpSync(srcPath, destPath);
-      }
-    }
-  }
 
   console.log("Done.");
 }
