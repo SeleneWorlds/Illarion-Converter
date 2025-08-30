@@ -104,13 +104,18 @@ export default function convert({ intermediate, output }) {
       groupById: true,
     })
   )) {
-    monsters[id].drops = monsters[id].drops || [];
+    // Group drops by category, and within each category by dropId
+    const drops = (monsters[id].drops = monsters[id].drops || {});
     for (const row of rows) {
-      dropsById[row.dropId] = row;
+      dropsById[row.dropId] = row; // keep reference for attaching extra data later
+      const category = row.category ?? "default";
+      const dropKey = row.dropId;
       delete row.dropId;
       row.item = `illarion:item_${row.itemId}`;
       delete row.itemId;
-      monsters[id].drops.push(row);
+      delete row.category; // category becomes the key
+      const cat = (drops[category] || (drops[category] = {}));
+      cat[dropKey] = row;
     }
   }
 
