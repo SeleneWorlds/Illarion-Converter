@@ -26,7 +26,10 @@ export default function scanLuaFiles(pathToLua) {
       .replace(/\.lua$/i, "") // drop extension
       .replace(/\//g, "."); // convert to dot notation for Lua modules
 
-    preloads[moduleName] = relPath.replace(/\\/g, "/");
+    preloads[moduleName] = {
+      file: relPath.replace(/\\/g, "/"),
+      encoding: "ISO-8859-15"
+    }
   }
 
   return preloads;
