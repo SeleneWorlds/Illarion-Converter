@@ -31,7 +31,10 @@ export const csvHeadersByType = {
   ],
   Overlays: ["#", "-", "id", "name", "preload", "layer", "4"],
   Sounds: ["#", "-", "id", "name", "2", "3", "4"],
-  Songs: ["#", "-", "id", "name", "loopStart", "loopEnd", "volume", "5", "6"],
+  Songs: {
+    gobaith: ["#", "-", "id", "name", "loopStart", "loopEnd", "volume", "5", "6"],
+    vbu: ["#", "-", "id", "name", "friendlyName", "loopStart", "loopEnd"]
+  },
   Tiles: [
     "#",
     "-",

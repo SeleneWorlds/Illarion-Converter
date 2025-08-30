@@ -26,6 +26,7 @@ import convertScheduledScripts from "./converters/scheduled_scripts.js";
 import convertSkillGroups from "./converters/skill_groups.js";
 import convertSkills from "./converters/skills.js";
 import convertSounds from "./converters/sounds.js";
+import convertSongs from "./converters/songs.js";
 import convertMonsterSpawns from "./converters/monster_spawns.js";
 import convertStarterPacks from "./converters/starter_packs.js";
 import convertTiles from "./converters/tiles.js";
@@ -37,6 +38,7 @@ async function run(basePath) {
   const intermediate = createIntermediate(basePath);
   const output = createOutput(basePath);
   const config = {
+    variant: basePath.includes("gobaith") ? "gobaith" : "vbu",
     legacyTransitions: basePath.includes("gobaith"),
     legacyDirections: basePath.includes("gobaith")
   }
@@ -69,7 +71,8 @@ async function run(basePath) {
         decryptDataFile(
           datFile,
           intermediate.client.csvDir,
-          input.client.publicKeyFile
+          input.client.publicKeyFile,
+          config.variant
         );
       }
     }
@@ -139,6 +142,7 @@ async function run(basePath) {
   convertSkillGroups(context);
   convertSkills(context);
   convertSounds(context);
+  convertSongs(context);
   convertMonsterSpawns(context);
   convertStarterPacks(context);
   convertTiles(context);

@@ -3,7 +3,7 @@ import { join, basename } from "path";
 import crypto from "crypto";
 import { csvHeadersByType } from "../illarion.js";
 
-export default function decryptDataFile(inputFile, outputDir, publicKeyFile) {
+export default function decryptDataFile(inputFile, outputDir, publicKeyFile, variant) {
   const csvFile = inputFile.replace(/\.dat$/i, ".csv");
   const buffer = readFileSync(inputFile);
   const publicKey = readFileSync(publicKeyFile, "utf-8");
@@ -38,9 +38,23 @@ export default function decryptDataFile(inputFile, outputDir, publicKeyFile) {
   }
   if (csvText.startsWith("/NOP/")) {
     if (detectedType && csvHeadersByType[detectedType]) {
-      const lines = csvText.split(/\r?\n/);
-      lines[0] = csvHeadersByType[detectedType].join(",");
-      csvText = lines.join("\n");
+      const headerSpec = csvHeadersByType[detectedType];
+      let headers;
+      if (Array.isArray(headerSpec)) {
+        headers = headerSpec;
+      } else if (headerSpec && typeof headerSpec === "object") {
+        if (variant && headerSpec[variant]) {
+          headers = headerSpec[variant];
+        } else {
+          const first = Object.values(headerSpec)[0];
+          headers = Array.isArray(first) ? first : [];
+        }
+      }
+      if (headers && headers.length) {
+        const lines = csvText.split(/\r?\n/);
+        lines[0] = headers.join(",");
+        csvText = lines.join("\n");
+      }
     }
   }
 
