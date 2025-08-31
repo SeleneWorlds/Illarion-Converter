@@ -24,12 +24,9 @@ export default function convert({ intermediate, output }) {
     },
     groupById: true,
   }))) {
-    const monsters = spawnpoints[id].monsters || (spawnpoints[id].monsters = []);
+    const monsters = spawnpoints[id].monsters || (spawnpoints[id].monsters = {});
     for (const row of rows) {
-      monsters.push({
-        monster: `illarion:monster_${row.monsterId}`,
-        count: row.count,
-      });
+      monsters[`illarion:monster_${row.monsterId}`] = row.count
     }
   }
 
