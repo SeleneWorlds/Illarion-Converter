@@ -156,6 +156,7 @@ export default function convert({ intermediate, output }) {
     delete row.descriptionEn;
     entries[`illarion:item_${id}`] = {
       ...row,
+      visual: `illarion:item_${id}`,
       rotsInInventory: row.rotsInInventory == "t",
       objectAfterRot: row.objectAfterRot
         ? `illarion:item_${row.objectAfterRot}`
