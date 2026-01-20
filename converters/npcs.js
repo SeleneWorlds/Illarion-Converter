@@ -32,7 +32,7 @@ export default function convert({ intermediate, output }) {
     entries[`illarion:npc_${id}`] = {
       ...row,
       race: "illarion:race_" + row.type,
-      entity: "illarion:race_" + row.type + "_" + row.sex,
+      entity: "illarion:races/race_" + row.type + "_" + row.sex,
       isHealer: row.isHealer == "t",
       metadata: { id: Number(id), name: row.name },
     };
