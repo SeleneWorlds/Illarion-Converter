@@ -26,6 +26,6 @@ export default function convert({ intermediate, output }) {
     }
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "sounds"), soundsEntries);
-  output.registryEntries(join(output.assetBundle.clientData, "audio"), audioEntries);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "sounds"), soundsEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "audio"), audioEntries);
 }

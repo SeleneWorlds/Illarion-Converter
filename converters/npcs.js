@@ -38,5 +38,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.registryEntries(join(output.dataBundle.serverData, "npcs"), entries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "npcs"), entries);
 }

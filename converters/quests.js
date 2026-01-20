@@ -17,5 +17,5 @@ export default function convert({ intermediate, output }) {
     }
   }
 
-  output.registryEntries(join(output.dataBundle.serverData, "quests"), entries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "quests"), entries);
 }

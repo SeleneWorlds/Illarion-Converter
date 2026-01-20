@@ -21,5 +21,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.registryEntries(join(output.dataBundle.serverData, "effects"), entries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "effects"), entries);
 }

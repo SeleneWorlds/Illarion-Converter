@@ -156,7 +156,7 @@ export default function convert({ intermediate, output }) {
     delete row.descriptionEn;
     entries[`illarion:item_${id}`] = {
       ...row,
-      visual: `illarion:item_${id}`,
+      visual: `illarion:items/item_${id}`,
       rotsInInventory: row.rotsInInventory == "t",
       objectAfterRot: row.objectAfterRot
         ? `illarion:item_${row.objectAfterRot}`
@@ -168,7 +168,7 @@ export default function convert({ intermediate, output }) {
   const tileEntries = {};
   for (const [id, row] of Object.entries(items)) {
     tileEntries[`illarion:item_${id}`] = {
-      visual: `illarion:item_${id}`,
+      visual: `illarion:items/item_${id}`,
       impassable: row.impassable,
       passableAbove: row.passableAbove,
       metadata: { itemId: Number(id) },
@@ -176,7 +176,7 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "tiles/items"), tileEntries);
-  output.registryEntries(join(output.dataBundle.serverData, "items"), entries);
-  output.registryEntries(join(output.assetBundle.clientData, "visuals/items"), itemVisuals);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "tiles/items"), tileEntries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "items"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/items"), itemVisuals);
 }

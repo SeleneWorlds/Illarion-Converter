@@ -283,7 +283,7 @@ export default function convert({ intermediate, output, config }) {
         components: {
           "illarion:visual": {
             type: "visual",
-            visual: `illarion:race_${id}_${type}`,
+            visual: `illarion:races/race_${id}_${type}`,
           },
         },
         metadata: { raceId: Number(id), typeId: Number(type) },
@@ -291,7 +291,7 @@ export default function convert({ intermediate, output, config }) {
     }
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "entities/races"), entityEntries);
-  output.registryEntries(join(output.dataBundle.serverData, "races"), entries);
-  output.registryEntries(join(output.assetBundle.clientData, "visuals/races"), raceVisuals);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "entities/races"), entityEntries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "races"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/races"), raceVisuals);
 }

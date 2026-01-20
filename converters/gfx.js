@@ -20,7 +20,7 @@ export default function convert({ intermediate, output }) {
         components: {
           "illarion:visual": {
             type: "visual",
-            visual: `illarion:gfx_${id}`,
+            visual: `illarion:gfx/gfx_${id}`,
           },
           "illarion:client_script": {
             type: "client_script",
@@ -44,11 +44,11 @@ export default function convert({ intermediate, output }) {
         offsetY: -row.offsetY,
         textures,
         duration: speedToDuration(row.animationSpeed),
-        instaced: true,
+        instanced: true,
         metadata: { 'gfxId': Number(id) }
     };
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "entities/gfx"), entityEntries);
-  output.registryEntries(join(output.assetBundle.clientData, "visuals/gfx"), visualEntries);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "entities/gfx"), entityEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/gfx"), visualEntries);
 }

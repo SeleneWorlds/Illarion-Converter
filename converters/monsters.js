@@ -152,5 +152,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.registryEntries(join(output.dataBundle.serverData, "monsters"), entries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "monsters"), entries);
 }

@@ -23,5 +23,5 @@ export default function convert({ intermediate, output }) {
     entries[`illarion:skill_group_${id}`] = row;
   }
 
-  output.registryEntries(join(output.dataBundle.serverData, "skill_groups"), entries);
+  output.registryEntries(join(output.dataBundle.serverData, "illarion", "skill_groups"), entries);
 }

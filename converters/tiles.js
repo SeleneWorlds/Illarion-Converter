@@ -21,7 +21,7 @@ export default function convert({ intermediate, output }) {
   for (const [id, row] of Object.entries(clientTiles)) {
     const metadata = { tileId: Number(id), mapColorIndex: row.mapColorIndex }
     if (row.frameMode === 0) {
-      tileVisuals[`illarion:tile_${id}`] = {
+      tileVisuals[`illarion:tiles/tile_${id}`] = {
         type: "simple",
         offsetX: 0,
         offsetY: -18,
@@ -35,7 +35,7 @@ export default function convert({ intermediate, output }) {
           `client/textures/illarion/tiles/${row.fileName}-${idx}.png`
         );
       }
-      tileVisuals[`illarion:tile_${id}`] = {
+      tileVisuals[`illarion:tiles/tile_${id}`] = {
         type: row.frameMode === 1 ? "animated" : "variants",
         offsetX: 0,
         offsetY: -18,
@@ -73,14 +73,14 @@ export default function convert({ intermediate, output }) {
   for (const [id, row] of Object.entries(tiles)) {
     entries[`illarion:tile_${id}`] = {
       ...row,
-      visual: `illarion:tile_${id}`,
+      visual: `illarion:tiles/tile_${id}`,
       metadata: { tileId: Number(id) },
     };
   }
 
   delete tiles["illarion:tile_0"];
-  delete tileVisuals["illarion:tile_0"];
+  delete tileVisuals["illarion:tiles/tile_0"];
 
-  output.registryEntries(join(output.dataBundle.commonData, "tiles"), entries);
-  output.registryEntries(join(output.assetBundle.clientData, "visuals/tiles"), tileVisuals);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "tiles"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/tiles"), tileVisuals);
 }

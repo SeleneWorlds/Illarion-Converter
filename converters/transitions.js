@@ -18,7 +18,7 @@ export default function convert({ intermediate, output, config }) {
   for (const [id, row] of Object.entries(transitions)) {
     for (let idx = transitionIdStart; idx <= transitionIdEnd; idx++) {
       tileEntries[`illarion:transition_${id}_${idx}`] = {
-        visual: `illarion:transition_${id}_${idx}`,
+        visual: `illarion:transitions/transition_${id}_${idx}`,
         passableAbove: true,
         metadata: { tileId: Number(id), overlayId: idx },
       }
@@ -50,7 +50,7 @@ export default function convert({ intermediate, output, config }) {
     for (let idx = transitionIdStart; idx <= transitionIdEnd; idx++) {
       trans.push({
         neighbours: transitionNeighbours?.[idx - transitionIdStart],
-        tile: `illarion:transition_${id}_${idx}`,
+        tile: `illarion:transitions/transition_${id}_${idx}`,
       })
     }
     transitionEntries[`illarion:tile_${id}`] = {
@@ -59,7 +59,7 @@ export default function convert({ intermediate, output, config }) {
     }
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "tiles/transitions"), tileEntries);
-  output.registryEntries(join(output.dataBundle.commonData, "transitions"), transitionEntries);
-  output.registryEntries(join(output.assetBundle.clientData, "visuals/transitions"), visualEntries);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "tiles/transitions"), tileEntries);
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "transitions"), transitionEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/transitions"), visualEntries);
 }
