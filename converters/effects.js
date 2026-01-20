@@ -21,5 +21,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.serverData, "effects.json"), { entries });
+  output.registryEntries(join(output.dataBundle.serverData, "effects"), entries);
 }

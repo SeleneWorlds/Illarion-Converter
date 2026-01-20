@@ -291,13 +291,7 @@ export default function convert({ intermediate, output, config }) {
     }
   }
 
-  output.json(join(output.dataBundle.commonData, "race.entities.json"), {
-    entries: entityEntries,
-  });
-  output.json(join(output.dataBundle.serverData, "races.json"), {
-    entries,
-  });
-  output.json(join(output.assetBundle.clientData, "race.visuals.json"), {
-    entries: raceVisuals,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "entities/races"), entityEntries);
+  output.registryEntries(join(output.dataBundle.serverData, "races"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "visuals/races"), raceVisuals);
 }

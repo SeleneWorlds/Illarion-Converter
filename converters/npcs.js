@@ -38,7 +38,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.serverData, "npcs.json"), {
-    entries,
-  });
+  output.registryEntries(join(output.dataBundle.serverData, "npcs"), entries);
 }

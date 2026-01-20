@@ -52,5 +52,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.serverData, "starter_packs.json"), { entries })
+  output.registryEntries(join(output.dataBundle.serverData, "starter_packs"), entries)
 }

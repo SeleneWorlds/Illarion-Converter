@@ -59,15 +59,7 @@ export default function convert({ intermediate, output, config }) {
     }
   }
 
-  output.json(join(output.dataBundle.commonData, "transition.tiles.json"), {
-    entries: tileEntries,
-  });
-
-  output.json(join(output.dataBundle.commonData, "transitions.json"), {
-    entries: transitionEntries,
-  });
-
-  output.json(join(output.assetBundle.clientData, "transition.visuals.json"), {
-    entries: visualEntries,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "tiles/transitions"), tileEntries);
+  output.registryEntries(join(output.dataBundle.commonData, "transitions"), transitionEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "visuals/transitions"), visualEntries);
 }

@@ -39,5 +39,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.serverData, "monster_spawns.json"), { entries })
+  output.registryEntries(join(output.dataBundle.serverData, "monster_spawns"), entries)
 }

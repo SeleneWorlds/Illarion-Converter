@@ -176,11 +176,7 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.commonData, "item.tiles.json"), {
-    entries: tileEntries,
-  });
-  output.json(join(output.dataBundle.serverData, "items.json"), { entries });
-  output.json(join(output.assetBundle.clientData, "item.visuals.json"), {
-    entries: itemVisuals,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "tiles/items"), tileEntries);
+  output.registryEntries(join(output.dataBundle.serverData, "items"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "visuals/items"), itemVisuals);
 }

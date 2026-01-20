@@ -81,10 +81,6 @@ export default function convert({ intermediate, output }) {
   delete tiles["illarion:tile_0"];
   delete tileVisuals["illarion:tile_0"];
 
-  output.json(join(output.dataBundle.commonData, "tiles.json"), {
-    entries,
-  });
-  output.json(join(output.assetBundle.clientData, "tile.visuals.json"), {
-    entries: tileVisuals,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "tiles"), entries);
+  output.registryEntries(join(output.assetBundle.clientData, "visuals/tiles"), tileVisuals);
 }

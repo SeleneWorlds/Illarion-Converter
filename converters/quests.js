@@ -17,7 +17,5 @@ export default function convert({ intermediate, output }) {
     }
   }
 
-  output.json(join(output.dataBundle.serverData, "quests.json"), {
-    entries,
-  });
+  output.registryEntries(join(output.dataBundle.serverData, "quests"), entries);
 }

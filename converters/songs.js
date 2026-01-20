@@ -35,11 +35,6 @@ export default function convert({ intermediate, output }) {
     }
   }
 
-  output.json(join(output.dataBundle.commonData, "song.sounds.json"), {
-    entries: soundsEntries,
-  });
-
-  output.json(join(output.assetBundle.clientData, "song.audio.json"), {
-    entries: audioEntries,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "sounds/songs"), soundsEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "audio/songs"), audioEntries);
 }

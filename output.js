@@ -118,6 +118,15 @@ export default function create(basePath) {
       if (typeof text === "string") {
         applyMappingsToString(text, mappings);
       }
+    },
+    registryEntries(baseDir, entries) {
+      // Write each registry entry to an individual file
+      // The folder structure determines the registry type
+      for (const [key, data] of Object.entries(entries)) {
+        const fileName = `${key.replace(/illarion:/g, '')}.json`;
+        const filePath = join(baseDir, fileName);
+        this.json(filePath, data);
+      }
     }
   };
 }

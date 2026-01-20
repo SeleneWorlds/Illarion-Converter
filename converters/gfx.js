@@ -49,11 +49,6 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.commonData, "gfx.entities.json"), {
-    entries: entityEntries,
-  });
-
-  output.json(join(output.assetBundle.clientData, "gfx.visuals.json"), {
-    entries: visualEntries,
-  });
+  output.registryEntries(join(output.dataBundle.commonData, "entities/gfx"), entityEntries);
+  output.registryEntries(join(output.assetBundle.clientData, "visuals/gfx"), visualEntries);
 }

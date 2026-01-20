@@ -17,7 +17,5 @@ export default function convert({ intermediate, output }) {
     entries[`illarion:scheduled_script_${id}`] = row;
   }
 
-  output.json(join(output.dataBundle.serverData, "scheduled_scripts.json"), {
-    entries,
-  });
+  output.registryEntries(join(output.dataBundle.serverData, "scheduled_scripts"), entries);
 }

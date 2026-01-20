@@ -152,5 +152,5 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.json(join(output.dataBundle.serverData, "monsters.json"), { entries });
+  output.registryEntries(join(output.dataBundle.serverData, "monsters"), entries);
 }

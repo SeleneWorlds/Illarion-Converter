@@ -17,7 +17,5 @@ export default function convert({ intermediate, output }) {
     entries[`illarion:triggerfield_${id}`] = row;
   }
 
-  output.json(join(output.dataBundle.serverData, "triggerfields.json"), {
-    entries,
-  });
+  output.registryEntries(join(output.dataBundle.serverData, "triggerfields"), entries);
 }
