@@ -40,7 +40,7 @@ export default function convert({ intermediate, output }) {
         offsetX: 0,
         offsetY: -18,
         textures,
-        ...(row.frameMode === 1 ? { duration: speedToDuration(row.animationSpeed) } : {}),
+        ...(row.frameMode === 1 ? { duration: speedToDuration(row.animationSpeed) * textures.length } : {}),
         metadata
       };
     }

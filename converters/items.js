@@ -50,7 +50,7 @@ export default function convert({ intermediate, output }) {
         offsetY: row.offsetY,
         textures,
         ...(row.frameMode == 1
-          ? { duration: speedToDuration(row.animationSpeed) }
+          ? { duration: speedToDuration(row.animationSpeed) * textures.length }
           : {}),
         metadata: { itemId: id },
       };

@@ -43,7 +43,7 @@ export default function convert({ intermediate, output }) {
         offsetX: row.offsetX,
         offsetY: -row.offsetY,
         textures,
-        duration: speedToDuration(row.animationSpeed),
+        duration: speedToDuration(row.animationSpeed) * textures.length,
         instanced: true,
         metadata: { 'gfxId': Number(id) }
     };
