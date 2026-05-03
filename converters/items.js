@@ -165,6 +165,20 @@ export default function convert({ intermediate, output }) {
     };
   }
 
+  const entityEntries = {};
+  for (const [id] of Object.entries(items)) {
+    entityEntries[`illarion:item_${id}`] = {
+      tags: ["illarion:item"],
+      components: {
+        "illarion:visual": {
+          type: "visual",
+          visual: `illarion:items/item_${id}`,
+        },
+      },
+      metadata: { itemId: Number(id) },
+    };
+  }
+
   const tileEntries = {};
   for (const [id, row] of Object.entries(items)) {
     tileEntries[`illarion:item_${id}`] = {
@@ -176,6 +190,7 @@ export default function convert({ intermediate, output }) {
     };
   }
 
+  output.registryEntries(join(output.dataBundle.commonData, "illarion", "entities/items"), entityEntries);
   output.registryEntries(join(output.dataBundle.commonData, "illarion", "tiles/items"), tileEntries);
   output.registryEntries(join(output.dataBundle.serverData, "illarion", "items"), entries);
   output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/items"), itemVisuals);
