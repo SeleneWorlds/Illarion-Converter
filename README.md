@@ -50,3 +50,5 @@ Then run the following command:
 ```bash
 npm run convert vbu
 ```
+
+Note that Illarion's non-code assets are not licensed for third party use. This should be used for reference and educational purposes only.
