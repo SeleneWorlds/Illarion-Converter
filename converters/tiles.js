@@ -73,7 +73,7 @@ export default function convert({ intermediate, output }) {
   for (const [id, row] of Object.entries(tiles)) {
     entries[`illarion:tile_${id}`] = {
       ...row,
-      visual: `illarion:tile_${id}`,
+      visual: `illarion:tiles/tile_${id}`,
       metadata: { tileId: Number(id) },
     };
   }
