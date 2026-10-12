@@ -1,0 +1,13 @@
+{
+  "layout": "diamond",
+  "directions": [
+    { "name": "north", "x": 0, "y": -1, "z": 0, "angle": 0 },
+    { "name": "south", "x": 0, "y": 1, "z": 0, "angle": 180 },
+    { "name": "east", "x": 1, "y": 0, "z": 0, "angle": 90 },
+    { "name": "west", "x": -1, "y": 0, "z": 0, "angle": 270 },
+    { "name": "northeast", "x": 1, "y": -1, "z": 0, "angle": 45 },
+    { "name": "northwest", "x": -1, "y": -1, "z": 0, "angle": 135 },
+    { "name": "southeast", "x": 1, "y": 1, "z": 0, "angle": 225 },
+    { "name": "southwest", "x": -1, "y": 1, "z": 0, "angle": 315 }
+  ]
+}
