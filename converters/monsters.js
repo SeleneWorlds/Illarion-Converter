@@ -13,7 +13,6 @@ export default function convert({ intermediate, output }) {
         mob_hitpoints: "hitpoints",
         mob_movementtype: "movementType",
         mob_canattack: "canAttack",
-        mob_canhealself: "canHealSelf",
         script: "script",
         mob_minsize: "minSize",
         mob_maxsize: "maxSize",
@@ -23,6 +22,12 @@ export default function convert({ intermediate, output }) {
 
   for (const [id, row] of Object.entries(monsters)) {
     monsters[id].race = `illarion:race_${row.race}`;
+    monsters[id].size = { min: row.minSize, max: row.maxSize };
+    delete monsters[id].minSize;
+    delete monsters[id].maxSize;
+    monsters[id].attributes = {};
+    monsters[id].skills = {};
+    monsters[id].items = {};
   }
 
   for (const [id, rows] of Object.entries(
@@ -79,8 +84,7 @@ export default function convert({ intermediate, output }) {
     for (const row of rows) {
       items[row.bodyPosition] = {
         item: `illarion:item_${row.itemId}`,
-        minCount: row.minCount,
-        maxCount: row.maxCount,
+        count: { min: row.minCount, max: row.maxCount },
       };
     }
   }
@@ -114,6 +118,15 @@ export default function convert({ intermediate, output }) {
       row.item = `illarion:item_${row.itemId}`;
       delete row.itemId;
       delete row.category; // category becomes the key
+      row.count = { min: row.minCount, max: row.maxCount };
+      row.quality = { min: row.minQuality, max: row.maxQuality };
+      row.durability = { min: row.minDurability, max: row.maxDurability };
+      delete row.minCount;
+      delete row.maxCount;
+      delete row.minQuality;
+      delete row.maxQuality;
+      delete row.minDurability;
+      delete row.maxDurability;
       const cat = (drops[category] || (drops[category] = {}));
       cat[dropKey] = row;
     }
@@ -141,14 +154,15 @@ export default function convert({ intermediate, output }) {
   for (const [id, row] of Object.entries(monsters)) {
     output.i18n(`illarion:monster_${id}`, "de", row.nameDe);
     output.i18n(`illarion:monster_${id}`, "en", row.nameEn);
+    const name = row.nameEn;
     delete row.nameDe;
     delete row.nameEn;
+    if (!row.script) delete row.script;
 
     entries[`illarion:monster_${id}`] = {
       ...row,
       canAttack: row.canAttack == "t",
-      canHealSelf: row.canHealSelf == "t",
-      metadata: { id: Number(id), name: row.name },
+      metadata: { id: Number(id), name },
     };
   }
 
