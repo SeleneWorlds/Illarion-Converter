@@ -89,6 +89,7 @@ export default function create(basePath) {
     },
     dataBundle: {
       rootDir: dataBundleDir,
+      clientData: join(dataBundleDir, "client", "data"),
       serverData: join(dataBundleDir, "server", "data"),
       commonData: join(dataBundleDir, "common", "data")
     },

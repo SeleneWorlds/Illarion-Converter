@@ -14,20 +14,15 @@ export default function convert({ intermediate, output }) {
     },
   });
 
-  const entityEntries = {}
-  for (const [id, row] of Object.entries(effects)) {
-    entityEntries[`illarion:gfx_${id}`] = {
-        components: {
-          "illarion:visual": {
-            type: "visual",
-            visual: `illarion:gfx/gfx_${id}`,
-          },
-          "illarion:client_script": {
-            type: "client_script",
-            script: "illarion-gobaith-data.client.lua.entities.remove_after_animation",
-          },
+  const timelineEntries = {}
+  for (const id of Object.keys(effects)) {
+    timelineEntries[`illarion:gfx_${id}`] = {
+      events: [
+        {
+          type: "visual_animation",
+          visual: `illarion:gfx/gfx_${id}`,
         },
-        metadata: { gfxId: Number(id) },
+      ],
     }
   }
 
@@ -49,6 +44,6 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  output.registryEntries(join(output.dataBundle.commonData, "illarion", "entities/gfx"), entityEntries);
+  output.registryEntries(join(output.dataBundle.clientData, "illarion", "timelines/gfx"), timelineEntries);
   output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/gfx"), visualEntries);
 }
