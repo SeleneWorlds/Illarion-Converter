@@ -32,8 +32,12 @@ export default function convert({ intermediate, output }) {
 
   const entries = {}
   for (const [id, row] of Object.entries(spawnpoints)) {
+    const { x, y, z, minSpawnTime, maxSpawnTime, ...spawnpoint } = row;
     entries[`illarion:monster_spawn_${id}`] = {
-      ...row,
+      ...spawnpoint,
+      enabled: true,
+      coordinate: { x, y, z },
+      spawnTime: { min: minSpawnTime, max: maxSpawnTime },
       spawnAll: row.spawnAll == "t",
       metadata: { id: Number(id) },
     };
