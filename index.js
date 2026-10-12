@@ -230,4 +230,9 @@ if (process.argv.length < 3) {
 }
 
 const basePath = process.argv[2];
-run(basePath);
+try {
+  await run(basePath);
+} catch (error) {
+  console.error("Conversion failed:", error);
+  process.exitCode = 1;
+}
