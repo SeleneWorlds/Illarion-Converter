@@ -36,7 +36,7 @@ export default function convert({ intermediate, output }) {
   }))) {
     const items = starterPacks[id].items || (starterPacks[id].items = {});
     for (const row of rows) {
-      items[row.slot] = { itemId: `illarion:item_${row.itemId}`, count: row.count, quality: row.quality };
+      items[row.slot - 1] = { itemId: `illarion:item_${row.itemId}`, count: row.count, quality: row.quality };
     }
   }
 
