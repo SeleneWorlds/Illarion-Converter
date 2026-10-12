@@ -166,10 +166,13 @@ export default function convert({ intermediate, output }) {
   }
 
   const entityEntries = {};
-  for (const [id] of Object.entries(items)) {
+  for (const [id, row] of Object.entries(items)) {
     entityEntries[`illarion:item_${id}`] = {
       tags: ["illarion:item"],
       components: {
+        ...(row.passableAbove
+          ? { "selene:passable_above": { type: "passable_above" } }
+          : {}),
         "illarion:visual": {
           type: "visual",
           visual: `illarion:items/item_${id}`,
