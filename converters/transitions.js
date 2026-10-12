@@ -30,6 +30,7 @@ export default function convert({ intermediate, output, config }) {
     for (let idx = transitionIdStart; idx <= transitionIdEnd; idx++) {
       visualEntries[`illarion:transition_${id}_${idx}`] = {
         type: 'simple',
+        occlusionFade: false,
         offsetX: 0,
         offsetY: -18,
         texture: `client/textures/illarion/tiles/${row.fileName}-${idx}.png`,

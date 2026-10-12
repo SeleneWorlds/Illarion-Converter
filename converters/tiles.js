@@ -23,6 +23,7 @@ export default function convert({ intermediate, output }) {
     if (row.frameMode === 0) {
       tileVisuals[`illarion:tile_${id}`] = {
         type: "simple",
+        occlusionFade: false,
         offsetX: 0,
         offsetY: -18,
         texture: `client/textures/illarion/tiles/${row.fileName}.png`,
@@ -37,6 +38,7 @@ export default function convert({ intermediate, output }) {
       }
       tileVisuals[`illarion:tile_${id}`] = {
         type: row.frameMode === 1 ? "animated" : "variants",
+        occlusionFade: false,
         offsetX: 0,
         offsetY: -18,
         textures,
