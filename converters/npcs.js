@@ -11,7 +11,6 @@ export default function convert({ intermediate, output, config }) {
       npc_posy: 'y',
       npc_posz: 'z',
       npc_faceto: 'facing',
-      npc_is_healer: 'isHealer',
       npc_name: 'name',
       npc_script: 'script',
       npc_sex: 'sex',
@@ -46,7 +45,6 @@ export default function convert({ intermediate, output, config }) {
       facing: directions[row.facing],
       race: "illarion:race_" + row.type,
       entity: "illarion:races/race_" + row.type + "_" + row.sex,
-      isHealer: row.isHealer == "t",
       metadata: { id: Number(id), name: row.name },
     };
   }
