@@ -281,6 +281,9 @@ export default function convert({ intermediate, output, config }) {
       entityEntries[`illarion:race_${id}_${type}`] = {
         tags: ["illarion:character"],
         components: {
+          "selene:impassable": {
+            type: "impassable",
+          },
           "illarion:visual": {
             type: "visual",
             visual: `illarion:races/race_${id}_${type}`,
