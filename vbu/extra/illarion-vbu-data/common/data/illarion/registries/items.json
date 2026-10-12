@@ -2,6 +2,10 @@
   "name": "items",
   "platform": "server",
   "schema": {
+    "nameGerman": "string",
+    "nameEnglish": "string",
+    "descriptionGerman": "string",
+    "descriptionEnglish": "string",
     "volume": "integer",
     "weight": "integer",
     "agingSpeed": "integer",

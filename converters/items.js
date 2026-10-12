@@ -70,10 +70,10 @@ export default function convert({ intermediate, output }) {
       itm_worth: "worth",
       itm_buystack: "buyStack",
       itm_maxstack: "maxStack",
-      itm_name_german: "nameDe",
-      itm_name_english: "nameEn",
-      itm_description_german: "descriptionDe",
-      itm_description_english: "descriptionEn",
+      itm_name_german: "nameGerman",
+      itm_name_english: "nameEnglish",
+      itm_description_german: "descriptionGerman",
+      itm_description_english: "descriptionEnglish",
       itm_rareness: "rareness",
       itm_name: "name",
       itm_level: "level",
@@ -146,14 +146,20 @@ export default function convert({ intermediate, output }) {
 
   const entries = {};
   for (const [id, row] of Object.entries(items)) {
-    output.i18n(`illarion:item_${id}`, "de", row.nameDe);
-    output.i18n(`illarion:item_${id}.description`, "de", row.descriptionDe);
-    output.i18n(`illarion:item_${id}`, "en", row.nameEn);
-    output.i18n(`illarion:item_${id}.description`, "en", row.descriptionEn);
-    delete row.nameDe;
-    delete row.nameEn;
-    delete row.descriptionDe;
-    delete row.descriptionEn;
+    row.nameGerman = String(row.nameGerman ?? "");
+    row.nameEnglish = String(row.nameEnglish ?? "");
+    row.descriptionGerman = String(row.descriptionGerman ?? "");
+    row.descriptionEnglish = String(row.descriptionEnglish ?? "");
+    for (const field of [
+      "agingSpeed", "brightness", "buyStack", "level",
+      "maxStack", "rareness", "weight", "worth",
+    ]) {
+      row[field] = Number(row[field] || 0);
+    }
+    output.i18n(`illarion:item_${id}`, "de", row.nameGerman);
+    output.i18n(`illarion:item_${id}.description`, "de", row.descriptionGerman);
+    output.i18n(`illarion:item_${id}`, "en", row.nameEnglish);
+    output.i18n(`illarion:item_${id}.description`, "en", row.descriptionEnglish);
     entries[`illarion:item_${id}`] = {
       ...row,
       visual: `illarion:items/item_${id}`,
