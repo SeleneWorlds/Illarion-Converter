@@ -165,36 +165,6 @@ export default function convert({ intermediate, output }) {
     };
   }
 
-  const entityEntries = {};
-  for (const [id, row] of Object.entries(items)) {
-    entityEntries[`illarion:item_${id}`] = {
-      tags: ["illarion:item"],
-      components: {
-        ...(row.passableAbove
-          ? { "selene:passable_above": { type: "passable_above" } }
-          : {}),
-        "illarion:visual": {
-          type: "visual",
-          visual: `illarion:items/item_${id}`,
-        },
-      },
-      metadata: { itemId: Number(id) },
-    };
-  }
-
-  const tileEntries = {};
-  for (const [id, row] of Object.entries(items)) {
-    tileEntries[`illarion:item_${id}`] = {
-      visual: `illarion:items/item_${id}`,
-      impassable: row.impassable,
-      passableAbove: row.passableAbove,
-      metadata: { itemId: Number(id) },
-      tags: ["illarion:item"]
-    };
-  }
-
-  output.registryEntries(join(output.dataBundle.commonData, "illarion", "entities/items"), entityEntries);
-  output.registryEntries(join(output.dataBundle.commonData, "illarion", "tiles/items"), tileEntries);
   output.registryEntries(join(output.dataBundle.serverData, "illarion", "items"), entries);
   output.registryEntries(join(output.assetBundle.clientData, "illarion", "visuals/items"), itemVisuals);
 }
