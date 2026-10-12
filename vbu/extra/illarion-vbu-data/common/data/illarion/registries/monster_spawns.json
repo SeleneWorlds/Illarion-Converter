@@ -1,0 +1,34 @@
+{
+  "name": "monster_spawns",
+  "platform": "server",
+  "schema": {
+    "enabled": "enabled",
+    "coordinate": "coordinate",
+    "range": {
+      "type": "distance",
+      "coordinate": "coordinate",
+      "min": 0
+    },
+    "spawnTime": "range",
+    "spawnAll": "boolean",
+    "spawnRange": {
+      "type": "distance",
+      "coordinate": "coordinate",
+      "min": 0
+    },
+    "monsters": {
+      "type": "map",
+      "keyType": {
+        "type": "registry",
+        "registry": "illarion:monsters"
+      },
+      "valueType": "integer"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "id": "integer"
+      }
+    }
+  }
+}

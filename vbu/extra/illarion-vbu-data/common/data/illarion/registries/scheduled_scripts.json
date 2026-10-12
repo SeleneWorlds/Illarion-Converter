@@ -1,0 +1,11 @@
+{
+  "name": "scheduled_scripts",
+  "platform": "server",
+  "schema": {
+    "enabled": "enabled",
+    "script": "script",
+    "function": "string",
+    "minInterval": "integer",
+    "maxInterval": "integer"
+  }
+}

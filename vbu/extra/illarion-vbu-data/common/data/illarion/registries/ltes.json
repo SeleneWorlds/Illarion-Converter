@@ -1,0 +1,16 @@
+{
+  "name": "ltes",
+  "platform": "server",
+  "schema": {
+    "enabled": "enabled",
+    "name": "string",
+    "script": "script",
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "id": "integer",
+        "name": "string"
+      }
+    }
+  }
+}

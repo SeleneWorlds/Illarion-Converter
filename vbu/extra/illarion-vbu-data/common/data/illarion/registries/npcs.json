@@ -1,0 +1,45 @@
+{
+  "name": "npcs",
+  "platform": "server",
+  "schema": {
+    "enabled": "enabled",
+    "type": "integer",
+    "coordinate": "coordinate",
+    "facing": "Direction",
+    "name": "string",
+    "script": {
+      "type": "string",
+      "optional": true
+    },
+    "sex": {
+      "type": "enum",
+      "values": [
+        {
+          "value": 0,
+          "label": "Male"
+        },
+        {
+          "value": 1,
+          "label": "Female"
+        }
+      ]
+    },
+    "race": {
+      "type": "registry",
+      "registry": "illarion:races"
+    },
+    "entity": {
+      "type": "registry",
+      "registry": "selene:entities"
+    },
+    "skills": {
+      "type": "map",
+      "optional": true,
+      "keyType": {
+        "type": "registry",
+        "registry": "illarion:skills"
+      },
+      "valueType": { "type": "integer", "min": 0, "max": 100 }
+    }
+  }
+}
